@@ -1,0 +1,5 @@
+- El sistema sea capaz de cruzar partidas presupuestarias, esta informacion se refleje en las estadisticas. Ej: El sistema arroje el presupuesto de una alcaldia para solucionar problemas de agua.
+
+- La opcion de "incumplimiento de abastecimiento de agua" viene dada por un acuerdo entre ambas partes, esta no puede ser una opcion aceptada permanentemente. 
+
+- cuando el usuario indica el estdo, municipio y parroquia el sitema lo ubica en un sector de esa parroquia, de esta manera se puede determinar la densidad de población para poder obtener la eficiencia de los responsbales y tambien se pudiese tener el indice. Esto pudiese hcerce por las coordenanas geograficas. Con las coordenadas se puede saber el concejal, alcalde, gobernador que atiende esa area especifica que el usuario a dado.
