@@ -9,7 +9,7 @@ $Datos;
 <script type="text/javascript" src="<?php echo RUTA_URL . '/public/javascript/parroquias.js'?>"></script> 
 
 <div class="container contenedor_1"> 
-    <h1>Ubicación geografica de la comunidad donde existe el falllo con el agua potable</h1>               
+    <h1 class="h1_2">Ubicación geografica de la comunidad donde existe el falllo con el agua potable</h1>               
     <form action="<?php echo RUTA_URL?>/Ubicacion_C/recibeUbicacion" method="post">
         <div class="form-row">
             <div class="col">
@@ -55,8 +55,9 @@ $Datos;
                 </select>
             </div>
         </div>
+        <br>
         <div class="form-group">
-            <label>Dirección</label>
+            <label>Dirección del sector</label>
             <textarea class="form-control" id="exampleFormControlTextarea1" name="direccion" rows="3"></textarea>
         </div>
         <div class="">

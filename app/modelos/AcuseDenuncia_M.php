@@ -13,6 +13,13 @@
             $gsent = $this->db->ContarRegistros();
             return $gsent;
         }
+
+        public function consultarFecha($ID_Afiliado, $CodigoFallo){
+            $this->db->Consulta("SELECT fechaDenuncia, fechaCaducidad, aleatorio FROM fallos WHERE ID_Afiliado = '$ID_Afiliado' AND abierto = 1 AND codigoFallo = $CodigoFallo");
+            //registros() es un metodo de la clase Conexion_BD
+            $resultados =  $this->db->registros();
+            return $resultados;
+        }
         
         public function insertarUbicacion($RecibeVarios, $Aleatorio){
             //Se inserta a la BD por medio de sentencias preparadas

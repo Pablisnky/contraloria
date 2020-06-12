@@ -15,35 +15,35 @@
  
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 		<link rel="stylesheet" type="text/css" href="<?php echo RUTA_URL?>/css/estilosContraloria.css"/>
-		<!-- <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Raleway:400|Montserrat'> -->
+		<link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Raleway:400|Montserrat'>
 		<!-- <link rel="shortcut icon" type="image/png" href="../images/logo_aplicacion/logo_Mira_horebi.png"> -->
         
-        <!-- <script type="text/javascript" src="<?php echo RUTA_URL . '/public/javascript/funcionesVarias.js';?>"></script> 
-        <script type="text/javascript" src="../javascript/Funciones_Ajax.js"></script> -->
+         <script type="text/javascript" src="<?php echo RUTA_URL . '/public/javascript/Funciones_varias.js';?>"></script> 
+        <!--<script type="text/javascript" src="../javascript/Funciones_Ajax.js"></script> -->
 	</head>
     <body>		
-		<header>
-				<nav class="navbar navbar-expand-lg navbar-light bg-light">
-					<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-						<div class="navbar-nav">
-							<a class="nav-item nav-link active" href="<?php echo RUTA_URL . '/Inicio_C';?>">Inicio<span class="sr-only">(current)</span></a>
-							<a class="nav-item nav-link" href="#">Nuestro ADN</a>
-							<a class="nav-item nav-link" href="<?php echo RUTA_URL . '/Estadisticas_C';?>">Estadisticas</a>
-							<a class="nav-item nav-link" href="#">Algoritmo</a>
-							<a class="nav-item nav-link" href="<?php echo RUTA_URL . '/Participacion_C';?>">Participación social</a>
-							<!-- <a class="nav-item nav-link" href="<?php echo RUTA_URL . '/Login_C';?>">Inicia sesión</a> -->
-							<a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Donaciones</a>
-						</div>
+		<header class="header_1">
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+					<div class="navbar-nav">
+						<a class="nav-item nav-link active" href="<?php echo RUTA_URL . '/Inicio_C';?>">Inicio<span class="sr-only">(current)</span></a>
+						<a class="nav-item nav-link" href="#">Nuestro ADN</a>
+						<a class="nav-item nav-link" href="<?php echo RUTA_URL . '/Estadisticas_C';?>">Estadisticas</a>
+						<a class="nav-item nav-link" href="#">Algoritmo</a>
+						<a class="nav-item nav-link" href="<?php echo RUTA_URL . '/Participacion_C';?>">Participación social</a>
+						<a class="nav-item nav-link" href="<?php echo RUTA_URL . '/Frases_C';?>">Frases</a>
+						<a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Donaciones</a>
 					</div>
+				</div>
+					<?php
+					if(isset($_SESSION["ID_Afiliado"])){	?>
+						<div class="contenedor_4">
+							<a class="a_1" href="<?php echo RUTA_URL . '/CerrarS_C';?>">Pablo</a>
+							<a class="a_2" href="<?php echo RUTA_URL . '/CerrarS_C';?>">Cerrar sesión</a>
+						</div>
 						<?php
-						if(isset($_SESSION["ID_Afiliado"])){	?>
-							<div class="contenedor_4">
-								<a class="a_1" href="<?php echo RUTA_URL . '/CerrarS_C';?>">Pablo</a>
-								<a class="a_2" href="<?php echo RUTA_URL . '/CerrarS_C';?>">Cerrar sesión</a>
-							</div>
-							<?php
-						}	?>
-				</nav>
+					}	?>
+			</nav>
 		</header>
 
    <!-- No se cierrra la etiqueta <body> porque se cierra en el footer -->

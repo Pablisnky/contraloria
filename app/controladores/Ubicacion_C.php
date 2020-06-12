@@ -7,7 +7,7 @@
             $this->ConsultaUbicacion_M = $this->modelo("Ubicacion_M");           
         }
         
-        //Siempre cargara este metodo por defecto, solo sino se solicita otra metodo, los parametros los recibe de inicio_V.php o de Login_C
+        //Siempre cargara este metodo por defecto, solo sino se solicita otra metodo, los parametros los recibe de inicio_V.php - Login_C  -  login_Vrecord.php
         public function index($Parametros){
             //Sesion creada en Login_C/ValidarSesion
             if(isset($_SESSION["ID_Afiliado"])){

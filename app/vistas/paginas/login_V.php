@@ -3,10 +3,10 @@
 	require(RUTA_APP . "/vistas/inc/header.php");
 ?>
 
-	<div class="container">
-		<h2>Para realizar una denuncia es necesario iniciar sesión</h2>
+	<div class="container contenedor_1">
+		<h2 class="h1_1">Para realizar una denuncia es necesario iniciar sesión</h2>
 		<div class="row">
-			<div class="col-sm-4">
+			<div class="col-sm-4 contenedor_9">
 				<form action="<?php echo RUTA_URL . '/Login_C/ValidarSesion';?>" method="POST">	
 					<div class="form-group">
 						<input class="form-control" type="email" name="correo_Arr" id="Correo" placeholder="e-mail" autocomplete="off">
@@ -21,14 +21,14 @@
 					<input type="text" name="datosVarios" value="<?php echo $Datos;?>" hidden>
 					<input class="btn btn-primary" type="submit" value="Entrar"><!-- validar_02() se encuentra en return validar_02()validarFormularios.js -->
 					<hr>
-					<p class="parrafo_1">¿Olvidaste tu contraseña?
+					<p class="p_1">¿Olvidaste tu contraseña?
 					<label class="label_2" onclick="NotificarContrasena()">Recuperala</label></p>
 				</form>
 			</div>
 		</div>
-		<div class="row">	
-			<h2>¿No tienes cuenta?<h2>
-			<a class="label_2" href="<?php echo RUTA_URL . '/Registro_C';?>">Registrate</a></p>
+		<div class="">	
+			<h2 class="h1_1">¿No tienes cuenta?
+			<a class="" href="<?php echo RUTA_URL . '/Registro_C';?>">Registrate</a><h2>
 		</div>
 		<div class="contenedor_3" id="Contenedor_16" onclick="OcultarDiv()">
 			<form action="<?php echo RUTA_URL . '/Login_C/RecuperarClave';?>" method="POST" autocomplete="off">

@@ -1,24 +1,31 @@
 <!-- Se carga el header -->
 <?php
 session_start(); 
-include(RUTA_APP . "/vistas/inc/header.php"); ?>
-
+include(RUTA_APP . "/vistas/inc/header.php");
+?>
 		<div class="container contenedor_1">
-            <h1>Indice de funcionabilidad de servicios publicos</h1>
-            <p>Plataforma de contraloría social que permite en tiempo real manifestar tu inconfomidad como usuario de algún servicio publico en tu comunida o ciudad</p>
-            <p>La contraloría social es la herramienta fundamental para el  ejercicio de la participación, control y evaluación popular sobre la gestión del gobierno.</p>
-            <p>Aspectos a considerar antes de hacer su evalución</p>
-            <nav>
-                <ul>
-                    <li>Separe el  aspecto ideológico-partidista  de la  práctica  de  la  contraloría  social  y  de  la  evaluación  de  la  gestión  pública</li>
-                    <li>La contraloría social no debe constituir un “mecanismo para el pase de factura personal”</li>
-                    <li></li>
-                    <li></li>
-                </ul>
-            </nav>           
-            <div class="">
-                <h2 class="h2_1">Selecione un servicio del sector afectado para realizar su denuncia</h2>
-            </div> 
+            <div class="contenedor_8">
+                <div class="row contenedor_7">
+                    <div class="col-sm-12 ">
+                        <h1 class="h1_1">Indice de funcionabilidad de servicios públicos</h1>
+                        <p class="p_1"></p>
+                        <p class="p_1">La participación ciudadana en el control y evaluación sobre la gestión de los funcionarios del gobierno, es necesaria para prevenir la corrupcion, el fraude y la ineficiencia; mediante algoritmos de inteligencia artifical, analitica de datos y esta plataforma podemos detectar oportunamente e incluso predecir estas dolencias con el fin de proteger a nuestros ciudadanos, nuestras comunidades, nuestras ciudades y nuestro país, de quienes pretendan manejar el poder politico irresponsablemente.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <p class="p_1">Aspectos a considerar antes de hacer su evalución</p>
+                </div>
+                <div class="row contenedor_7">
+                    <ul>
+                        <li class="li_1">Separe el  aspecto ideológico-partidista  de la  práctica  de  la  contraloría  social  y  de  la  evaluación  de  la  gestión  pública</li>
+                        <li class="li_1">La contraloría social no debe constituir un “mecanismo para el pase de factura personal"</li>
+                        <li class="li_1"> El control social es un mecanismo de acción en la vigilancia, supervisión, seguimiento y control de los asuntos públicos.</li>
+                    </ul>     
+                </div>    
+                <div>
+                    <a class="a_3" href="#up">Selecione un servicio público para realizar su denuncia</a>
+                </div> 
+            </div>
             <div class="row">
                 <div class="col-sm-4">
                     <h2 class="bg-primary text-white h2_2">Educación</h2>
@@ -57,6 +64,7 @@ include(RUTA_APP . "/vistas/inc/header.php"); ?>
                         <li>Internet</li>
                         <li>Telefono</li>
                         <li>Calles</li>
+                        <li>Aseo urbano</li>
                     </ul>
                 </div>
                 <div class="col-sm-4">
@@ -86,6 +94,7 @@ include(RUTA_APP . "/vistas/inc/header.php"); ?>
                         <li>Parque natural</li>
                         <li>Monumento natural</li>
                         <li>Parque ejercicio</li>
+                        <li>Plaza</li>
                     </ul>
                 </div>
                 <div class="col-sm-4">
@@ -93,12 +102,13 @@ include(RUTA_APP . "/vistas/inc/header.php"); ?>
                     <ul class="ul_1">
                         <li>Estacion de policia</li>
                         <li>Estacion de bomberos</li>
+                        <li>Mercado municipal</li>
                     </ul>
                 </div>
                 <div class="col-sm-4">
                     <h2 class="bg-primary text-white h2_2">Entes gubernamentales</h2>
                     <ul  class="ul_1">
-                        <li>Gobernación</li>
+                        <li> Gobernación</li>
                         <li>Alcaldía</li>  
                         <li>Notaría</li>                  
                         <li>Registro mercantil</li>
@@ -112,3 +122,5 @@ include(RUTA_APP . "/vistas/inc/header.php"); ?>
 <?php 
     require(RUTA_APP . "/vistas/inc/footer.php");
 ?>
+
+<script type="text/javascript" src="<?php echo RUTA_URL . '/public/javascript/scrollUp.js';?>"></script>
