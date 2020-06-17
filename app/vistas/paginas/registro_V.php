@@ -37,7 +37,7 @@
 							<input class="form-control" type="password" name="confirmarClave" id="ConfirmarClave" placeholder="Repetir contraseña">
 						</div>                               
 					</fieldset> 
-					<input class="btn btn-primary" type="submit" name="Registrarse" value="Registrarse" style=" display: block; width: 120px;">
+					<input class="btn btn-primary boton_1" type="submit" name="Registrarse" value="Registrarse" style=" display: block; width: 120px;">
 				</form>
 			</div>
 		</div>

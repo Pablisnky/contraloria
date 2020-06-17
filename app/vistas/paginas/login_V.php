@@ -19,7 +19,7 @@
 						<label class="recordar" for="Recordar">Recordar datos en este equipo.</label>
 					</div>
 					<input type="text" name="datosVarios" value="<?php echo $Datos;?>" hidden>
-					<input class="btn btn-primary" type="submit" value="Entrar"><!-- validar_02() se encuentra en return validar_02()validarFormularios.js -->
+					<input class="btn btn-primary boton_1" type="submit" value="Entrar"><!-- validar_02() se encuentra en return validar_02()validarFormularios.js -->
 					<hr>
 					<p class="p_1">¿Olvidaste tu contraseña?
 					<label class="label_2" onclick="NotificarContrasena()">Recuperala</label></p>

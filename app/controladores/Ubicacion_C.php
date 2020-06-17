@@ -24,7 +24,7 @@
 
         public function recibeUbicacion(){            
             //Captura todos los campos del formulario, se recibe desde ubicacion_V.php
-            if($_SERVER["REQUEST_METHOD"] == "POST"){//si son enviados por POST, entra aqui
+            if($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["estado"]) && !empty($_POST["municipio"]) && !empty($_POST["parroquia"]) && !empty($_POST["direccion"]) && !empty($_POST["sector_servicio"])){//si son enviados por POST y sino estan vacios, entra aqui
                 $RecibeDatos = [
                     'Estado' => ucfirst($_POST["estado"]),
                     'Municipio' => ucfirst($_POST["municipio"]),
@@ -33,7 +33,12 @@
                     'Sector_Servicio' => strtolower($_POST["sector_servicio"])
                 ];
             }
-            print_r($RecibeDatos);
+            else{
+                echo "Llene todos los campos del formulario de registro";
+                echo "<a href='javascript: history.go(-1)'>Regresar</a>";
+                exit();
+            }
+            // print_r($RecibeDatos);
             // echo "<br>";
             // $Sector_Servicio = $RecibeDatos['Sector_Servicio'];
 

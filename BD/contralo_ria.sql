@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-06-2020 a las 12:43:35
+-- Tiempo de generación: 16-06-2020 a las 22:30:22
 -- Versión del servidor: 10.1.36-MariaDB
 -- Versión de PHP: 7.1.23
 
@@ -42,7 +42,10 @@ CREATE TABLE `afiliado` (
 --
 
 INSERT INTO `afiliado` (`ID_Afiliado`, `nombre`, `cedula`, `telefono`, `correo`, `fecha_afiliacion`) VALUES
-(1, 'Pablo', 12728036, 2147483647, 'pcabeza7@gmail.com', '2020-06-08 14:41:18');
+(1, 'Pablo', 12728036, 2147483647, 'pcabeza7@gmail.com', '2020-06-08 14:41:18'),
+(2, 'PAblo Cabeza', 1, 0, 'pablocabeza@gmail.com', '2020-06-14 10:22:56'),
+(3, 'Sdasd', 1, 1, 'asdfaf', '2020-06-14 10:53:30'),
+(4, 'Asdf', 1, 1, 'asf', '2020-06-14 11:00:14');
 
 -- --------------------------------------------------------
 
@@ -58,19 +61,11 @@ CREATE TABLE `fallos` (
   `sector` varchar(100) NOT NULL,
   `servicio` varchar(30) NOT NULL,
   `codigoFallo` int(11) NOT NULL,
-  `abierto` int(11) NOT NULL,
+  `descripcionFallo` varchar(250) NOT NULL DEFAULT 'No Aplica',
+  `abierto` int(20) NOT NULL,
   `fechaDenuncia` datetime NOT NULL,
   `fechaCaducidad` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `fallos`
---
-
-INSERT INTO `fallos` (`ID_Fallo`, `ID_Ubicacion`, `ID_Afiliado`, `aleatorio`, `sector`, `servicio`, `codigoFallo`, `abierto`, `fechaDenuncia`, `fechaCaducidad`) VALUES
-(24, 59, 1, 897689926, 'comunidad', 'aguapotable', 200, 1, '2020-06-09 21:18:22', '2020-06-30'),
-(25, 60, 1, 370525825, 'comunidad', 'aguapotable', 300, 1, '2020-06-09 21:19:51', '2020-06-29'),
-(26, 61, 1, 319650621, 'comunidad', 'aguapotable', 100, 1, '2020-06-09 21:26:05', '2020-06-29');
 
 -- --------------------------------------------------------
 
@@ -86,16 +81,6 @@ CREATE TABLE `ubicacion` (
   `direccion` varchar(250) NOT NULL,
   `aleatorio` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `ubicacion`
---
-
-INSERT INTO `ubicacion` (`ID_Ubicacion`, `estado`, `municipio`, `parroquia`, `direccion`, `aleatorio`) VALUES
-(58, 'apure', 'muoz', 'bruzual', 'xxxxxxxxxxxxxx', 679132804),
-(59, 'apure', 'muoz', 'bruzual', 'xxxxxxxxxxxxxx', 897689926),
-(60, 'apure', 'muoz', 'bruzual', 'xxxxxxxxxxxxxx', 370525825),
-(61, 'barinas', 'antoniojosedesucre', 'nicolspulido', 'rerdfd', 319650621);
 
 -- --------------------------------------------------------
 
@@ -114,7 +99,10 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`ID_Usuario`, `ID_Afiliado`, `clave`) VALUES
-(1, 1, '$2y$10$KZTPLA0lzVNH.U76iHBAIus2SM1UORC9a1cMTILBKX4gDysPkD4Z2');
+(1, 1, '$2y$10$KZTPLA0lzVNH.U76iHBAIus2SM1UORC9a1cMTILBKX4gDysPkD4Z2'),
+(2, 2, '$2y$10$LsPUcVTEc087Pvh/2kecCOgKNf8brVKyu.oNS3nz9kUs9ii2ufGf2'),
+(3, 2, '$2y$10$ccXXPw3KtyrBGq00ZEdRy.xhnJ2uc.CBSy4f1mbQC5TpKtalaX.C.'),
+(4, 2, '$2y$10$2I2jVsCadnKPKW3VIghVAu5cDDxGVuMvfzXwM/8q6scQHj6MCLK5m');
 
 --
 -- Índices para tablas volcadas
@@ -130,7 +118,8 @@ ALTER TABLE `afiliado`
 -- Indices de la tabla `fallos`
 --
 ALTER TABLE `fallos`
-  ADD PRIMARY KEY (`ID_Fallo`);
+  ADD PRIMARY KEY (`ID_Fallo`),
+  ADD KEY `QuitarFallo` (`ID_Ubicacion`);
 
 --
 -- Indices de la tabla `ubicacion`
@@ -152,25 +141,35 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `afiliado`
 --
 ALTER TABLE `afiliado`
-  MODIFY `ID_Afiliado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID_Afiliado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `fallos`
 --
 ALTER TABLE `fallos`
-  MODIFY `ID_Fallo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `ID_Fallo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 
 --
 -- AUTO_INCREMENT de la tabla `ubicacion`
 --
 ALTER TABLE `ubicacion`
-  MODIFY `ID_Ubicacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+  MODIFY `ID_Ubicacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `ID_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `fallos`
+--
+ALTER TABLE `fallos`
+  ADD CONSTRAINT `QuitarFallo` FOREIGN KEY (`ID_Ubicacion`) REFERENCES `ubicacion` (`ID_Ubicacion`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

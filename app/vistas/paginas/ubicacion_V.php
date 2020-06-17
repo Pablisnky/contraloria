@@ -1,12 +1,11 @@
 <!-- Se carga el header -->
-<?php include(RUTA_APP . "/vistas/inc/header.php"); 
-
-// $Datos es recibido desde Ubicacion_C/index
-$Datos;
-?>
+<?php include(RUTA_APP . "/vistas/inc/header.php"); ?>
 
 <script type="text/javascript" src="<?php echo RUTA_URL . '/public/javascript/Municipios.js'?>"></script> 
 <script type="text/javascript" src="<?php echo RUTA_URL . '/public/javascript/parroquias.js'?>"></script> 
+<script>
+	animacion();
+</script>
 
 <div class="container contenedor_1"> 
     <h1 class="h1_2">Ubicación geografica de la comunidad donde existe el falllo con el agua potable</h1>               
@@ -61,9 +60,10 @@ $Datos;
             <textarea class="form-control" id="exampleFormControlTextarea1" name="direccion" rows="3"></textarea>
         </div>
         <div class="">
+            <!-- $Datos es recibido desde Ubicacion_C/index -->
             <input type="text" name="sector_servicio" value="<?php echo $Datos;?>" hidden>
-            <a class="btn btn-primary" href="javascript: history.go(-2)">Regresar</a>
-            <input type="submit" class="btn btn-primary" value="Continuar">
+            <a class="btn btn-primary boton_1" href="javascript: history.go(-2)">Regresar</a>
+            <input type="submit" class="btn btn-primary boton_1" value="Continuar">
         </div>
     </form>
 </div>  

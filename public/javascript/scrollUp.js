@@ -62,8 +62,8 @@ document.addEventListener("DOMContentLoaded", function(){
             var now = 'now' in window.performance ? performance.now() : new Date().getTime();
             var time = Math.min(1, ((now - startTime) / duration));
             var timeFunction = easings[easing](time);
-            window.scroll(500, Math.ceil((timeFunction * (500 - start)) + start));
-            if(window.pageYOffset === 500) {
+            window.scroll(530, Math.ceil((timeFunction * (530 - start)) + start));
+            if(window.pageYOffset === 530) {
                 // window.scrollTo(0, 500);
                 return;
             }

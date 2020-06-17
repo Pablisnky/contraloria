@@ -25,7 +25,7 @@
         for(var i=0;i<porNombre.length;i++){
             if(porNombre[i].checked){
                 resultado= porNombre[i].value;
-                if(resultado != "DescribeFallo"){
+                if(resultado != "2000"){
                     document.getElementById("Textarea_1").style.display = "none";
                 }
                 else{
@@ -35,3 +35,17 @@
         }
         // document.getElementById("Resultado").innerHTML = " \Por Nombre: " + resultado;
     }
+
+// ***********************************************************************************
+// ***********************************************************************************
+// Hace parpadear el nombre del usuario en el header
+var nw = 0;
+function animacion(){  
+    var intervalo = setInterval(function(){
+        nw += 1;
+        document.getElementById('Contenedor_4').classList.toggle('fade');
+        if(nw == 6){
+            clearInterval(intervalo);
+        }
+    }, 400);
+}

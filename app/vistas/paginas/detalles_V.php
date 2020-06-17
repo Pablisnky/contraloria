@@ -3,7 +3,7 @@
 
 
 		<div class="container contenedor_1">
-            <div class="row contenedor_10">
+            <!-- <div class="row contenedor_10">
                 <h3 class="h3_1">Los organismos responsables por el servcio de agua potable en su comunidad son:</h3>
             </div>
             <div class="row">
@@ -17,10 +17,10 @@
                     <hr class="hr_1">
                     <h5 class="h5_1">Juan Garcia</h5>
                 </div>
-                <div class="col">
+                <div class="col" style="background-color:blue">
                     <h4 class="h4_1">Alcaldía</h3>
                     <hr class="hr_1">
-                    <h5 class="h5_1">Juan Garcia</h5>
+                    <h5 class="h5_1">Pablo Cabeza</h5>
                 </div>
                 <div class="col">
                     <h4 class="h4_1">Contraloría municipal</h3>
@@ -38,7 +38,7 @@
                     <h5 class="h5_1">Juan Garcia</h5>
                 </div>
             </div>
-            <br><br>
+            <br><br> -->
             <p>A la fecha, no se ha emitido un comunicado oficial aclarando razónes o estableciendo plazos para hacer correcciones de fallos en su comunidad.</p>
                 
             <h2 class="h1_3">Indique el fallo en el servicio</h2>
@@ -57,15 +57,15 @@
                 </div>
                 <hr>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="falloAgua" id="DescribeFallo"  value="DescribeFallo" onclick="DesactivarTextarea()">
+                    <input class="form-check-input" type="radio" name="falloAgua" id="DescribeFallo"  value="2000" onclick="DesactivarTextarea()">
                     <label class="label_1" for="DescribeFallo" onclick="DesactivarTextarea()">Describa el problema sino esta contemplado en esta lista.</300>
                 </div>                
                 <div class="textarea_1" id="Textarea_1">
-                    <textarea></textarea>
+                    <textarea name="descripcionFallo" ></textarea>
                 </div>
                 <input type="text" value="<?php echo $Datos;?>" name="varios_datos" hidden>
-                <a class="btn btn-primary" href="javascript: history.go(-1)">Regresar</a>
-                <input type="submit" class="btn btn-primary" value="Continuar">
+                <a class="btn btn-primary boton_1" href="javascript: history.go(-1)">Regresar</a>
+                <input type="submit" class="btn btn-primary boton_1" value="Continuar">
             </form>           
         <div id="Resultado"></div>
         </div> 

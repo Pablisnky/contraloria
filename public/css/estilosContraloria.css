@@ -20,28 +20,46 @@ body, html{
 }
 /* ******************************************************************************** */
 .a_1{
-	color: white;
 	text-align: center;
 	font-size: 1.1em;
 	display: block;
+	border-radius: 5px;
 }
 .a_2{
-	color: white;
 	text-align: center;
 	font-size: 0.8em;
 	display: block;
-}
-.a_1:hover, .a_2:hover{
-	color: white;
-}
+	border-radius: 5px;
+	z-index: 10;
+} 
 .a_3{
-	background-color:rgba(0, 0, 255, 0.1) ;
-	color: black;
 	border-radius: 5px;
 	text-align: center;
 	display: block; 
+	width: 83%;
+	position: absolute;
+	bottom: 5pt;
 	cursor: pointer;
 	font-size: 1.6em;
+}
+.a_3:hover{
+	color:white ;
+	background-color: rgba(28, 28, 235, 1) !important;
+}
+.a_4{/*inicio_V*/
+	color:rgba(6, 6, 29, 1) !important; 
+	display:block; 
+	width:100%
+}
+.a_5{/*inicio_V*/
+	color:rgba(6, 6, 29, 0.4) !important; 
+	display:block; 
+	width:100%
+}
+.boton_1{
+	background-color: rgba(6, 6, 29, 1) !important;
+	color: white;
+	border-radius: 5px;
 }
 .contenedor_1{
 	margin-top: 6%;
@@ -60,7 +78,14 @@ body, html{
 	border-radius:10px
 }
 .contenedor_4:hover{
-	background-color: rgba(0, 0, 255, 1); 
+	background-color: rgb(153, 153, 153); 
+}
+.contenedor_4a {  
+	opacity:1;
+	transition: opacity .5s;
+}
+.contenedor_4a.fade {
+	opacity: 0;
 }
 .contenedor_5{
 	background-color: rgba(0, 0, 0, 0.8);
@@ -81,7 +106,7 @@ body, html{
 	margin-bottom: 1%;
 }
 .contenedor_8{
-	min-height: 400px !important;
+	min-height: 40vw !important;
 	margin:0;
 	margin-bottom: 1%;
 }
@@ -90,6 +115,9 @@ body, html{
 }
 .contenedor_10{
 	margin-bottom: 3%;
+}
+.contenedor_11{
+	background-color: rgba(253, 80, 80, 0.8) !important;
 }
 .fieldset_1{
 	border-radius: 15px;
@@ -102,7 +130,7 @@ body, html{
 .h1_1{
 	text-align: center;
 }
-.h1_2{
+.h1_2{/*estadisticas_V*/
 	font-size: 1.5em;
 	margin-top: 10%;
 	margin-bottom: 5%;
@@ -127,8 +155,9 @@ body, html{
 	background-color: rgba(0, 0, 255, 0.4); 
 }
 .h2_2{
+	text-align: center;
+	width: 100%;
 	font-size: 1.7em;
-	padding-left: 5%;
 }
 .h3_1{
 	font-size: 1.5em;
@@ -154,17 +183,13 @@ body, html{
 	width: 100%;
 	z-index: 2;
 }
-.label_1{
+.label_1{/*inicio_V*/
 	cursor: pointer;
+	padding: 0% 1%;
 }
 .label_1:hover{
 	background-color:rgba(0, 0, 255, 0.1) ;
-	padding: 0% 2%;
 	border-radius: 5px
-}
-.label_2{
-	color: rgba(0, 0, 255, 0.7);
-	cursor: pointer;
 }
 .legend_1{
 	background-color:;
@@ -186,11 +211,22 @@ body, html{
 	left: 0;
 	z-index: 2;
 }
+.nav_1{
+	z-index: 2;
+	background-color: rgb(209, 209, 230) !important;
+}
 .p_1{
 	text-align: justify;
 	font-size: 1.2em;
 	font-family: Raleway 400;
 	line-height: 40px;
+}
+.p_2{
+	text-align: center;
+	font-size: 1.2em;
+	font-family: Raleway 400;
+	line-height: 40px;
+	width: 100%;
 }
 .simplescrollup__button {
     position: fixed;

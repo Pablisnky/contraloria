@@ -13,9 +13,23 @@
         }
         
         //Metodo llamado desde acuseDenuncia_V.php
-        public function indicadores($Servicio){
-            // $this->vista("paginas/estadistica_Indicadores_V/");
-            echo $Servicio;
+        public function indicadores($CodigoDenuncia){
+            //Se CONSULTA los datos de la denuncia
+            $Denuncia= $this->ConsultaEstadistica_M->consultarDatosDenuncia($CodigoDenuncia);
+            // print_r($Denuncia);
+
+            $Datos = $Denuncia;
+            $this->vista("paginas/estadistica_Indicadores_V", $Datos);
+        }
+
+        public function resultados($Estado, $Municipio, $Parroquia){
+            //Se CONSULTA los indicadores disponibles
+            $Indicadores = $this->ConsultaEstadistica_M->consultarIndicadoresParroquia($Estado, $Municipio, $Parroquia);
+            // print_r($Indicadores);
+            
+            $Datos = $Indicadores;
+
+            $this->vista("paginas/estadistica_Ind_Parro_V", $Datos);
         }
     }
 ?>    

@@ -7,8 +7,8 @@
             $this->db = new Conexion_BD;           
         }
         
-        public function consultarCodigoDenuncia($ID_Afiliado, $CodigoFallo){
-            $this->db->Consulta("SELECT * FROM fallos WHERE ID_Afiliado = '$ID_Afiliado' AND abierto = 1 AND codigoFallo = $CodigoFallo");
+        public function consultarCodigoDenuncia($ID_Afiliado, $CodigoFallo, $Estado, $Municipio,$Parroquia){
+            $this->db->Consulta("SELECT * FROM fallos WHERE ID_Afiliado = $ID_Afiliado AND (codigoFallo = $CodigoFallo && codigoFallo != 2000) AND ID_Ubicacion = ANY (SELECT ID_Ubicacion FROM ubicacion WHERE  estado = '$Estado' AND municipio = '$Municipio' AND parroquia = '$Parroquia')");
             //ContarRegistros() es un metodo de la clase Conexion_BD
             $gsent = $this->db->ContarRegistros();
             return $gsent;
@@ -48,9 +48,9 @@
             return $resultados;
         }
 
-        public function insertarCodigoDenuncia($Aleatorio, $ID_Afiliado, $ID_Ubicacion, $RecibeVarios, $FechaCaducidad){
+        public function insertarDescripcionDenuncia($Aleatorio, $ID_Afiliado, $ID_Ubicacion, $RecibeVarios, $FechaCaducidad){
             // //Se inserta a la BD por medio de sentencias preparadas
-            $this->db->Insertar("INSERT INTO fallos(ID_Ubicacion, ID_Afiliado, aleatorio, sector, servicio, codigoFallo, abierto, fechaDenuncia, fechaCaducidad) VALUES (:ID_UBICACION, :ID_AFILIADO, :ALEATORIO, :SECTOR, :SERVICIO, :CODIGO_FALLO, :ABIERTO, NOW(), :FECHA_CADUCIDAD)");
+            $this->db->Insertar("INSERT INTO fallos(ID_Ubicacion, ID_Afiliado, aleatorio, sector, servicio, codigoFallo, descripcionFallo, abierto, fechaDenuncia, fechaCaducidad) VALUES (:ID_UBICACION, :ID_AFILIADO, :ALEATORIO, :SECTOR, :SERVICIO, :CODIGO_FALLO, :DESCRIPCION, :ABIERTO, NOW(), :FECHA_CADUCIDAD)");
 
             $this->db->bind(':ID_UBICACION' , $ID_Ubicacion);
             $this->db->bind(':ID_AFILIADO' , $ID_Afiliado);
@@ -58,6 +58,7 @@
             $this->db->bind(':SECTOR' , $RecibeVarios[5]);
             $this->db->bind(':SERVICIO' , $RecibeVarios[6]);
             $this->db->bind(':CODIGO_FALLO' , $RecibeVarios[0]);
+            $this->db->bind(':DESCRIPCION' , $RecibeVarios[7]);
             $this->db->bind(':ABIERTO' , 1);
             $this->db->bind(':FECHA_CADUCIDAD' , $FechaCaducidad);
 

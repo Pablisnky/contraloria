@@ -14,20 +14,40 @@
         }
    
         public function recibeRegistro(){            
-            //Captura todos los campos del formulario, se recibe desde .php
-            if($_SERVER["REQUEST_METHOD"] == "POST"){//si son enviados por POST, entra aqui
+            //Captura todos los campos del formulario, se recibe desde .php 
+            if($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["nombre"]) && !empty($_POST["cedula"]) && !empty($_POST["telefono"]) && !empty($_POST["correo"]) && !empty($_POST["clave"]) && !empty($_POST["confirmarClave"])){//si son enviados por POST y sino estan vacios, entra aqui
                 $RecibeDatos = [
-                    'Nombre' => ucfirst($_POST["nombre"]),
-                    'Cedula' => ucfirst($_POST["cedula"]),
-                    'Telefono' => (int)$_POST["telefono"],
-                    'Correo' => strtolower($_POST["correo"]), 
-                    'Clave' => $_POST["clave"],
-                    'RepiteClave' => $_POST["confirmarClave"],
+                    'Nombre' => filter_input(INPUT_POST, "nombre", FILTER_SANITIZE_STRING),
+                    'Cedula' => filter_input(INPUT_POST, "cedula", FILTER_SANITIZE_STRING),
+                    'Telefono' => filter_input(INPUT_POST, "telefono", FILTER_SANITIZE_STRING),
+                    'Correo' => filter_input(INPUT_POST, "correo", FILTER_SANITIZE_STRING),
+                    'Clave' => filter_input(INPUT_POST, "clave", FILTER_SANITIZE_STRING), 
+                    'RepiteClave' => filter_input(INPUT_POST, "confirmarClave", FILTER_SANITIZE_STRING),
                 ];
-            }
-            //  print_r($RecibeDatos);
-            //  echo "<br>";
+                // print_r($RecibeDatos);
+                // echo "<br><br>";
+                $RecibeDatos = [
+                        'Nombre' => ucwords($_POST["nombre"]),
+                        'Cedula' => is_numeric($_POST["cedula"]),
+                        'Telefono' => is_numeric($_POST["telefono"]),
+                        'Correo' => strtolower($_POST["correo"]), 
+                        'Clave' => $_POST["clave"],
+                        'RepiteClave' => $_POST["confirmarClave"],
+                ];
+                // print_r($RecibeDatos); 
+                // echo "<br><br>";
+                //Despues de evaluar con is_numeric se da un aviso en caso de fallo
+                if($RecibeDatos["Telefono"] == false || $RecibeDatos["Cedula"] == false){      
+                    exit("El telefono debe ser solo números");
+                }
 
+            }
+            else{
+                echo "Llene todos los campos del formulario de registro";
+                echo "<a href='javascript: history.go(-1)'>Regresar</a>";
+                exit();
+            }
+            
             //Se INSERTAN los datos en la BD
             $this->ConsultaRegistro_M->insertarUsuario($RecibeDatos);
 
@@ -47,7 +67,7 @@
             $this->ConsultaRegistro_M->insertarClaveUsuario($Datos, $ClaveCifrada);
 
             //Redirecciona, La función redireccionar se encuantra en url_helper.php
-            redireccionar("/Login_C/");
+            redireccionar("/Inicio_C/");
         }
     }
 ?>    
