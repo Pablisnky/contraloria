@@ -1,6 +1,6 @@
 <!-- Se carga el header -->
 <?php
-session_start(); 
+// session_start(); 
 include(RUTA_APP . "/vistas/inc/header.php");
 ?>
 
@@ -26,7 +26,7 @@ include(RUTA_APP . "/vistas/inc/header.php");
                     <h2 class="h2_2">Confidencialidad</h2>
                 </div>
                 <div class="row contenedor_7">
-                        <p class="p_2">Los datos suministrados a la plataforma son cifrados antes de ser almacenados</p>  
+                        <p class="p_2">Los datos suministrados a la plataforma son cifrados antes de ser almacenados y no pueden ser rastreados</p>  
                 </div>    
                 <div>
                     <a class="a_3 boton_1" href="#up">Selecione un servicio público para realizar su denuncia</a>
@@ -64,7 +64,7 @@ include(RUTA_APP . "/vistas/inc/header.php");
                     <h2 class="bg-primary text-white h2_2">Comunidad</h2>
                     <ul class="ul_1">
                         <li class="label_1"><a class="a_4" href="<?php echo RUTA_URL . '/Ubicacion_C/index/Comunidad,AguaPotable';?>">Agua potable</a></li>
-                        <li class=""><a class="a_5">Aguas servidas</a></li>
+                        <li class="label_1"><a class="a_4" href="<?php echo RUTA_URL . '/Ubicacion_C/index/Comunidad,AguaServida';?>">Aguas servidas</a></li>
                         <li class=""><a class="a_5">Electricidad</a></li>
                         <li class=""><a class="a_5">Gas</a></li>
                         <li class=""><a class="a_5">Internet</a></li>

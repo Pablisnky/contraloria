@@ -31,6 +31,7 @@
             }
         }
         
+        //MEtodo pra hacer consultas tipo SELECT
         public function Consulta($sql){
             //se prepara la consulta por medio de prepare() que es un metodo PDO y devuel el objeto mysqli_stmt
             $this->stmt = $this->dbh->prepare($sql);

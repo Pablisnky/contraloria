@@ -13,7 +13,7 @@
             if($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["falloAgua"])){//si son enviados por POST y sino estan vacios, entra aqui
                 $RecibeVarios = [
                     'Fallo' => ucfirst($_POST["falloAgua"]),
-                    'Varios_datos' => strtolower($_POST["varios_datos"]),
+                    'Varios_datos' => mb_strtolower($_POST["varios_datos"]),
                     'DescribeProblema' => $_POST["descripcionFallo"]
                 ];
             }

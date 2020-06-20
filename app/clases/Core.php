@@ -10,13 +10,14 @@ class Core{
 
     public function __construct(){
         // print_r($this->geturl());
-        // echo "<br>";
+        // // echo "<br>";
         $url = $this->geturl();
-        // print_r($url);
+        //  print_r($url);
         // echo "<br>";
+
         
         // echo "************************************************************************"  . "<br>";
-
+        //CARGA CONTROLADOR
         //Busca en la carpeta controladores si el controlador que hay en la url existe
         //Si existe se setea como controlador; sino, por defecto el controlador es "inicio_C"
         if(file_exists("../app/controladores/" . ucwords($url[0]) . ".php")){
@@ -32,9 +33,10 @@ class Core{
         //se solicita el controlador recibido y se instancia
         require_once("../app/controladores/" . $this->controladorActual . ".php");
         $this->controladorActual = new $this->controladorActual;
-
+        // echo "<br>";
+        // print_r($this->controladorActual);
         // echo "************************************************************************"  . "<br>";
-
+        //CARGA METODO
         //Busca en el controlador hayado, si el metodo que hay en la url existe
         //Sino existe se setea como por defecto "index"
         if(isset($url[1])){
@@ -53,6 +55,7 @@ class Core{
         unset($url[1]);
 
         // echo "************************************************************************"  . "<br>";
+        // CARGA PARAMETROS
         //Se obtienen los parametros enviados por la url
         $this->parametros = $url ? array_values($url) : [];
 
@@ -66,12 +69,13 @@ class Core{
 
     public function geturl(){
         //La url se obtiene via get[] desde htaccess que esta en la carpeta public, que mapea todo lo que se hace
-        // echo " 1.- Se obtiene el controlador[0], metodo[1] y parametro[2] de la url: " . $_GET["url"] . "<br>";
+        // // echo " 1.- Se obtiene la url: " . $_GET["url"] . "<br>";
+        
         //Se verifica que la url este seteada
         if(isset($_GET["url"])){
             $url= rtrim($_GET["url"],'/');
-            $url= filter_var($url, FILTER_SANITIZE_URL);
-            $url= explode('/',$url);
+            // $url= filter_var($url, FILTER_SANITIZE_URL); esta linea es importante pero no deja que la letra ñ y letras con acentos aparezcan en la url
+            $url= explode('/' , $url);
             return $url;
         }
     }

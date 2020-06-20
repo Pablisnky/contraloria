@@ -15,7 +15,14 @@
         }
         
         public function consultarIndicadoresParroquia($Estado, $Municipio, $Parroquia){
-            $this->db->Consulta("SELECT * FROM ubicacion INNER JOIN fallos ON ubicacion.ID_Ubicacion=fallos.ID_Ubicacion WHERE estado = '$Estado' AND municipio = '$Municipio' AND parroquia = '$Parroquia'");
+            $this->db->Consulta("SELECT * FROM ubicacion INNER JOIN fallos ON ubicacion.ID_Ubicacion=fallos.ID_Ubicacion WHERE estado = '$Estado' AND municipio = '$Municipio' AND parroquia = '$Parroquia' GROUP BY servicio");
+            //registros() es un metodo de la clase Conexion_BD
+            $resultados =  $this->db->registros();
+            return $resultados;
+        } 
+
+        public function consultarCantidadDenuncias($Estado, $Municipio, $Parroquia, $Servicio){
+            $this->db->Consulta("SELECT COUNT(*) AS Total FROM ubicacion INNER JOIN fallos ON ubicacion.ID_Ubicacion=fallos.ID_Ubicacion WHERE estado = '$Estado' AND municipio = '$Municipio' AND parroquia = '$Parroquia' AND servicio = '$Servicio' GROUP BY servicio");
             //registros() es un metodo de la clase Conexion_BD
             $resultados =  $this->db->registros();
             return $resultados;

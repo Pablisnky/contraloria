@@ -56,9 +56,11 @@
             <div class="contenedor_66" id='Loading'>
                 <p class="p_6">Espere un momento</p>
             </div>
-            <div id="Mostrar_Estadisticas">                
+            <div id="Mostrar_Estadisticas">   
+                <h4>Ordenanzas municipales</h4>             
                 <p>En esta sección se visualizan graficos</p>
-                <p>Cantidad de denuncias por semana</p>
+                <p>Cantidad de denuncias hechas el día de hoy de manera general</p>
+                <p>Cantidad de denuncias por semana de manera general</p>
                 <p>Problemas solucionados</p>
                 <p>Responsables de instituciones en numero</p>
                 <p>Responsabilidad del concejal en numero</p>

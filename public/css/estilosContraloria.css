@@ -61,6 +61,9 @@ body, html{
 	color: white;
 	border-radius: 5px;
 }
+.boton_1:hover{
+	background-color: rgba(6, 6, 29, 0.9) !important;
+}
 .contenedor_1{
 	margin-top: 6%;
 	z-index: 0;

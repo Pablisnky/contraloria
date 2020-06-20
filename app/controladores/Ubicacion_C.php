@@ -11,14 +11,14 @@
         public function index($Parametros){
             //Sesion creada en Login_C/ValidarSesion
             if(isset($_SESSION["ID_Afiliado"])){
-                //En $Parametros se tienen dos parametros
+                //En $Parametros se tienen dos parametros el sector y el servicio
                 // echo "Parametros desde el if " . $Parametros;
                 $Datos = $Parametros;
                 $this->vista("paginas/ubicacion_V", $Datos);
             }
             else{
                 // echo "Parametros desde el else " .  $Parametros;
-                header("location:" . RUTA_URL . "/Login_C/index/" .$Parametros);     
+                header("location:" . RUTA_URL . "/Login_C/index/" . $Parametros);     
             }
         }
 
@@ -27,10 +27,10 @@
             if($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["estado"]) && !empty($_POST["municipio"]) && !empty($_POST["parroquia"]) && !empty($_POST["direccion"]) && !empty($_POST["sector_servicio"])){//si son enviados por POST y sino estan vacios, entra aqui
                 $RecibeDatos = [
                     'Estado' => ucfirst($_POST["estado"]),
-                    'Municipio' => ucfirst($_POST["municipio"]),
+                    'Municipio' => $_POST["municipio"],
                     'Parroquia' => ucfirst($_POST["parroquia"]),
-                    'Direccion' => strtolower($_POST["direccion"]),
-                    'Sector_Servicio' => strtolower($_POST["sector_servicio"])
+                    'Direccion' => mb_strtolower($_POST["direccion"]),
+                    'Sector_Servicio' => mb_strtolower($_POST["sector_servicio"])
                 ];
             }
             else{
@@ -40,20 +40,11 @@
             }
             // print_r($RecibeDatos);
             // echo "<br>";
-            // $Sector_Servicio = $RecibeDatos['Sector_Servicio'];
-
-            $RecibeDatos = implode(",", $RecibeDatos);
-            echo $RecibeDatos;
-            //En $Sector_Servicio se tiene un string, se convierte en array
-            // $Parametros = explode(',' , $Sector_Servicio);
-            // print_r($Parametros);
-         
-            //Se INSERTAN los datos en la BD
-            // $this->ConsultaUbicacion_M->insertarUbicacion($RecibeDatos);
-
-            //Redirecciona, La función redireccionar se encuentra en url_helper.php
-            // redireccionar("/Detalle_C/index/" . $RecibeDatos . $Sector . $Servicio);
             
+            $RecibeDatos = implode(",", $RecibeDatos);
+            // print_r($RecibeDatos);
+            // echo "<br>";
+
             header("location:" . RUTA_URL . "/Detalle_C/index/" . $RecibeDatos);  
         }
     }

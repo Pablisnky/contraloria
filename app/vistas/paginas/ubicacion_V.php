@@ -61,7 +61,7 @@
         </div>
         <div class="">
             <!-- $Datos es recibido desde Ubicacion_C/index -->
-            <input type="text" name="sector_servicio" value="<?php echo $Datos;?>" hidden>
+            <input type="text" name="sector_servicio" value="<?php echo $Datos;?>" >
             <a class="btn btn-primary boton_1" href="javascript: history.go(-2)">Regresar</a>
             <input type="submit" class="btn btn-primary boton_1" value="Continuar">
         </div>

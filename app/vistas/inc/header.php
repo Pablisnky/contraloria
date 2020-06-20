@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
 	<head>
-		<title><?php echo NOMBRESITIO;?></title>
+		<title><?php //echo NOMBRESITIO;?></title>
 
-		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<meta http-equiv="content-type" content="text/html; charset = utf-8">
 		<meta name="description" content=".">
 		<meta name="keywords" content="">
 		<meta name="author" content="Pablo Cabeza">
@@ -37,11 +37,11 @@
 				</div>
 					<?php
 					if(isset($_SESSION["ID_Afiliado"])){	?>
-						<div class="contenedor_4 contenedor_4a" id="Contenedor_4">
-							<a class="a_1 boton_1" href="<?php echo RUTA_URL . '/CerrarS_C';?>">Pablo</a>
-							<a class="a_2 boton_1" href="<?php echo RUTA_URL . '/CerrarS_C';?>">Cerrar sesión</a>
-						</div>
-						<?php
+					 	<div class="contenedor_4 contenedor_4a" id="Contenedor_4">
+					 		<a class="a_1 boton_1" href="<?php echo RUTA_URL . '/CerrarS_C';?>">Pablo</a>
+					 		<a class="a_2 boton_1" href="<?php echo RUTA_URL . '/CerrarS_C';?>">Cerrar sesión</a>
+					 	</div>
+					 	<?php
 					}	?>
 			</nav>
 		</header>

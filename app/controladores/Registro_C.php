@@ -27,18 +27,23 @@
                 // print_r($RecibeDatos);
                 // echo "<br><br>";
                 $RecibeDatos = [
-                        'Nombre' => ucwords($_POST["nombre"]),
-                        'Cedula' => is_numeric($_POST["cedula"]),
-                        'Telefono' => is_numeric($_POST["telefono"]),
-                        'Correo' => strtolower($_POST["correo"]), 
+                        'Nombre' => ucwords($_POST["nombre"]),                       
+                        'Cedula' => is_numeric($_POST["cedula"]) ? $_POST["cedula"]: false,
+                        'Telefono' => is_numeric($_POST["telefono"]) ? $_POST["telefono"]: false,
+                        'Correo' => mb_strtolower($_POST["correo"]),  
                         'Clave' => $_POST["clave"],
                         'RepiteClave' => $_POST["confirmarClave"],
                 ];
-                // print_r($RecibeDatos); 
+                // print_r($RecibeDatos);
+                // echo "<br><br>"; 
                 // echo "<br><br>";
                 //Despues de evaluar con is_numeric se da un aviso en caso de fallo
-                if($RecibeDatos["Telefono"] == false || $RecibeDatos["Cedula"] == false){      
+                if($RecibeDatos["Telefono"] == false){      
                     exit("El telefono debe ser solo números");
+                }
+                //Despues de evaluar con is_numeric se da un aviso en caso de fallo
+                if($RecibeDatos["Cedula"] == false){      
+                    exit("La cedula debe ser solo números");
                 }
 
             }

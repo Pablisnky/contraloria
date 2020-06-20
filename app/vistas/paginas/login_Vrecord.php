@@ -1,6 +1,6 @@
 <?php
 	// session_start();
-	//Se traen los datos obtenidos en la consulta Entrada_C
+	//Se traen los datos obtenidos en la consulta Login_C
 	foreach($Datos["usuarioRecord"] as $usuarioRec){
         $Correo= $usuarioRec->correo;
         // echo "Correo: " . $Correo  . "<br>"; 
