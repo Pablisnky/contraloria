@@ -1,6 +1,11 @@
-#permite entrar directamente en el index.php sin entrar a la carpeta public; redirige a la carpeta public que contiene el index.php
+#ignora el index.php de la url, de modo que muestra diretamente el controlador/metodo/paamtros; tambien sólo se podrá acceder al archivo index.php; a las carpetas css, js e images; Si se necesita otra carpeta de carácter público debera agregarse al final de images.
+
+#Hay que recordar que todas las acciones pasarán primero por index.php, y luego será está la encargada, y dependiendo del path de la url, de llamar al controlador y acción correspondiente.
+
 <IfModule mod_rewrite.c>
-	RewriteEngine On
-	RewriteRule ^$ public/ [L]
-	RewriteRule (.*)$ public/$1 [L]
+    RewriteEngine On
+    RewriteCond $1 !^(index.php|css|js|images|robots.txt)
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php/$1 [L]
 </IfModule>
