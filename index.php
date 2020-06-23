@@ -154,9 +154,12 @@
 	if (defined('STDIN')){
 		chdir(dirname(__FILE__));
 	}
-
+	// echo $system_path;
+	// echo "<br>";
 	if (($_temp = realpath($system_path)) !== FALSE){
-		$system_path = $_temp.DIRECTORY_SEPARATOR;
+		// echo $_temp;
+		// echo "<br>";
+		$system_path = $_temp . DIRECTORY_SEPARATOR;
 		// print_r($system_path);
 		// echo "<br>";
 	}
@@ -183,15 +186,18 @@
  */
 	// The name of THIS file
 	define('SELF', pathinfo(__FILE__, PATHINFO_BASENAME));
+	// echo SELF . "<br>";
 
 	// Path to the system directory
 	define('BASEPATH', $system_path);
 
 	// Path to the front controller (this file) directory
 	define('FCPATH', dirname(__FILE__).DIRECTORY_SEPARATOR);
+	// echo FCPATH . "<br>";
 
 	// Name of the "system" directory
 	define('SYSDIR', basename(BASEPATH));
+	// echo SYSDIR;
 
 	// The path to the "application" directory
 	if (is_dir($application_folder)){
@@ -206,8 +212,8 @@
 			);
 		}
 	}
-	elseif (is_dir(BASEPATH.$application_folder.DIRECTORY_SEPARATOR)){
-		$application_folder = BASEPATH.strtr(
+	elseif (is_dir(BASEPATH . $application_folder.DIRECTORY_SEPARATOR)){
+		$application_folder = BASEPATH . strtr(
 			trim($application_folder, '/\\'),
 			'/\\',
 			DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR
@@ -259,4 +265,4 @@
  *
  * And away we go...
  */
-require_once BASEPATH.'core/CodeIgniter.php';
+require_once BASEPATH . 'core/CodeIgniter.php';

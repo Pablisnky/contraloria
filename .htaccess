@@ -1,4 +1,4 @@
-#ignora el index.php de la url, de modo que muestra diretamente el controlador/metodo/paamtros; tambien sólo se podrá acceder al archivo index.php; a las carpetas css, js e images; Si se necesita otra carpeta de carácter público debera agregarse al final de images.
+#ignora el index.php de la url, de modo que muestra diretamente el controlador/metodo/paamtros; tambien sólo se podrá acceder al archivo index.php;los archivos css, js, images no sera´n redireccionados y procesados por el index.php; La redirección se hará a través de la misma URL, pero agregando "index.php/" después del nombre del dominio y antes de lo que haya justo después de ese nombre de dominio. Si se necesita otra carpeta de carácter público debera agregarse al final de images.
 
 #Hay que recordar que todas las acciones pasarán primero por index.php, y luego será está la encargada, y dependiendo del path de la url, de llamar al controlador y acción correspondiente.
 
