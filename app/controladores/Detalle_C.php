@@ -16,14 +16,14 @@
                     $RecibeDatos_string = implode(",", $RecibeDatos_array);
                     $Datos = $RecibeDatos_string;
                     // Se carga la vista en este mismo metodo, "ojo" no redirecciona
-                    $this->vista("paginas/detalles_V", $Datos);
+                    $this->vista("paginas/fallosPorServicios/fallos_aguaPotable_V", $Datos);
                 break;
                 case "aguaservida": 
                     //$RecibeDatos se vuelve a convertir en un string
                     $RecibeDatos_string = implode(",", $RecibeDatos_array);  
                     $Datos = $RecibeDatos_string;
                     // Se carga la vista en este mismo metodo, "ojo" no redirecciona
-                    $this->vista_falloPorServicio("paginas/fallosPorServicios/fallos_" . $RecibeDatos_array[5] . "_V", $Datos);
+                    $this->vista("paginas/fallosPorServicios//fallos_aguaServida_V, $Datos);
                 break;
             }       
             

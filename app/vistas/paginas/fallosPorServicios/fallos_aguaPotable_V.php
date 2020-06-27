@@ -1,6 +1,3 @@
-<!-- Se carga el header -->
-<?php include(RUTA_APP . "/vistas/inc/header.php"); ?>
-
         <div class="container contenedor_1">
             <p>A la fecha, no se ha emitido un comunicado oficial aclarando razónes o estableciendo plazos para hacer correcciones de fallos en su comunidad.</p>
                 

@@ -8,7 +8,7 @@ include(RUTA_APP . "/vistas/inc/header.php");
             <div class="contenedor_8">
                 <div class="row contenedor_7">
                     <div class="col-sm-12">
-                        <p class="p_1">La participación ciudadana en el control y evaluación sobre la gestión publica, es necesaria para prevenir la corrupcion, el fraude y la ineficiencia, a la vez que ayuda a los administradores y dirigentes gubernamentales a conocer lo que sucede en sus comunidades y en sus diferentes regiones. Conectar Ambas premisas es el objetivo de esta plataforma y el inicio del camino para adentrarnos en el paradigma de ciudades inteligentes.</p>
+                        <p class="p_1">La participación ciudadana en el control y evaluación sobre la gestión publica, es necesaria para prevenir la corrupcion, el fraude y la ineficiencia, a la vez que ayuda a los administradores y dirigentes gubernamentales a conocer lo que sucede en sus comunidades y en sus diferentes regiones. Conectar Ambas premisas es el objetivo de esta plataforma.</p>
                     </div>
                 </div>
                 <div class="row">
