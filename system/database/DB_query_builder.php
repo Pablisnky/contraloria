@@ -1646,15 +1646,12 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * @param	bool	$escape	Whether to escape values and identifiers
 	 * @return	bool	TRUE on success, FALSE on failure
 	 */
-	public function insert($table = '', $set = NULL, $escape = NULL)
-	{
-		if ($set !== NULL)
-		{
+	public function insert($table = '', $set = NULL, $escape = NULL){
+		if ($set !== NULL){
 			$this->set($set, '', $escape);
 		}
 
-		if ($this->_validate_insert($table) === FALSE)
-		{
+		if ($this->_validate_insert($table) === FALSE){
 			return FALSE;
 		}
 
@@ -1682,19 +1679,14 @@ abstract class CI_DB_query_builder extends CI_DB_driver {
 	 * @param	string	the table to insert data into
 	 * @return	string
 	 */
-	protected function _validate_insert($table = '')
-	{
-		if (count($this->qb_set) === 0)
-		{
+	protected function _validate_insert($table = ''){
+		if(count($this->qb_set) === 0){
 			return ($this->db_debug) ? $this->display_error('db_must_use_set') : FALSE;
 		}
-
-		if ($table !== '')
-		{
+		if($table !== ''){
 			$this->qb_from[0] = $table;
 		}
-		elseif ( ! isset($this->qb_from[0]))
-		{
+		elseif(!isset($this->qb_from[0])){
 			return ($this->db_debug) ? $this->display_error('db_must_set_table') : FALSE;
 		}
 

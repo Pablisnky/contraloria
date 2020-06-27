@@ -18,26 +18,30 @@
     //     document.getElementById("Textarea_1").style.display = "block";
     // }
     
-    function DesactivarTextarea(){
-        var resultado = "ninguno";
-        var porNombre= document.getElementsByName("falloAgua");
-        // Recorremos todos los valores del radio button para encontrar el seleccionado
-        for(var i=0;i<porNombre.length;i++){
-            if(porNombre[i].checked){
-                resultado= porNombre[i].value;
-                if(resultado != "2000"){
-                    document.getElementById("Textarea_1").style.display = "none";
-                }
-                else{
-                    document.getElementById("Textarea_1").style.display = "block";
-                }
-            }   
-        }
-        // document.getElementById("Resultado").innerHTML = " \Por Nombre: " + resultado;
-    }
+// ********************************************************************************************
+// ********************************************************************************************
 
-// ***********************************************************************************
-// ***********************************************************************************
+function DesactivarTextarea(){
+    var resultado = "ninguno";
+    var porNombre= document.getElementsByName("falloAgua");
+    // Recorremos todos los valores del radio button para encontrar el seleccionado
+    for(var i=0;i<porNombre.length;i++){
+        if(porNombre[i].checked){
+            resultado= porNombre[i].value;
+            if(resultado != "2000"){
+                document.getElementById("Textarea_1").style.display = "none";
+            }
+            else{
+                document.getElementById("Textarea_1").style.display = "block";
+            }
+        }   
+    }
+    // document.getElementById("Resultado").innerHTML = " \Por Nombre: " + resultado;
+}
+
+// ********************************************************************************************
+// ********************************************************************************************
+
 // Hace parpadear el nombre del usuario en el header
 var nw = 0;
 function animacion(){  

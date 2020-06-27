@@ -13,6 +13,10 @@
 		<meta name="MobileOptimized" content="width">
 		<meta name="HandheldFriendly" content="true">
 		
+		<?php
+			$this->load->helper('html'); //necesario por link_tag()
+			echo link_tag('public/css/estilosContraloria.css');
+		?>
 		<link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Raleway:400|Montserrat'>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 		<!-- <link rel="shortcut icon" type="image/png" href="../images/logo_aplicacion/logo_Mira_horebi.png"> -->
@@ -25,23 +29,29 @@
 			<nav class="navbar navbar-expand-lg navbar-light  nav_1">
 				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 					<div class="navbar-nav ">
-						<!-- <a class="nav-item nav-link active" href="<?php // echo RUTA_URL . '/Inicio_C';?>">Inicio<span class="sr-only">(current)</span></a>
+						<!-- <a class="nav-item nav-link active" href="<?php // echo RUTA_URL . '/Inicio_C';?>">Inicio<span class="sr-only">(current)</span></a>-->
 						<a class="nav-item nav-link" href="#">Nuestro ADN</a>
-						<a class="nav-item nav-link" href="<?php // echo RUTA_URL . '/Estadisticas_C';?>">Estadisticas</a>
+						<a class="nav-item nav-link" href="<?php echo site_url('/Estadisticas_C');?>">Estadisticas</a>
 						<a class="nav-item nav-link" href="<?php // echo RUTA_URL . '/Registro_C';?>">Registrase</a>
 						<a class="nav-item nav-link" href="<?php // echo RUTA_URL . '/Login_C';?>">Participación social</a>
-						<a class="nav-item nav-link" href="<?php // echo RUTA_URL . '/Frases_C';?>">Frases</a> -->
+						<a class="nav-item nav-link" href="<?php // echo RUTA_URL . '/Frases_C';?>">Frases</a> 
 						<a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Donaciones</a>
 					</div>
 				</div>
 					<?php
-					// if(isset($_SESSION["ID_Afiliado"])){	?>
+					//sesion creada en Login_C.php
+            		if($this->session->userdata('logueado')){	
+						$Nombre = $this->session->userdata('nombre');
+						//se busca solo el primer nombre
+						$Nombre = explode(' ',trim($Nombre));
+						// echo $Nombre[0];
+						?>
 					 	<div class="contenedor_4 contenedor_4a" id="Contenedor_4">
-					 		<!-- <a class="a_1 boton_1" href="<?php // echo RUTA_URL . '/CerrarS_C';?>">Pablo</a>
-					 		<a class="a_2 boton_1" href="<?php // echo RUTA_URL . '/CerrarS_C';?>">Cerrar sesión</a> -->
+					 		<a class="a_1 boton_1" href="<?php echo site_url('/Login_C/cerrar_sesion');?>"><?php echo $Nombre[0];?></a>
+					 		<a class="a_2 boton_1" href="<?php echo site_url('/Login_C/cerrar_sesion');?>">Cerrar sesión</a>
 					 	</div>
 					 	<?php
-					// }	?>
+					}	?>
 			</nav>
 		</header>
 

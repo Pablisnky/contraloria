@@ -1,19 +1,17 @@
 <?php
     //se verifica si la ruta a la carpeta "system" esta definida, Constante creada en index.php
    if(!defined('BASEPATH')) exit('No direct script access allowed');
-    session_start();
 
     class Login_C extends CI_Controller{ 
         
         public function __construct(){
             parent::__construct();              
+            $this->load->library('session');
             $this->load->helper('url'); //necesario por site_url() en la vista
-            $this->load->helper('html'); //necesario por link_tag()
-            echo link_tag('public/css/estilosContraloria.css');
         }
 
-        //Siempre cargara este metodo por defecto, solo sino se solicita otra metodo, es llamadao desde Ubicacion_C
-        public function index($Sector, $Servico){
+        //En ausencia de metodo cargara este por defecto; es llamadao desde Ubicacion_C
+        public function index($Sector, $Servicio){
             //Se verifica si el usuario esta memorizado en las cookie de su computadora y las compara con la BD, para recuperar sus datos y autorellenar el formulario de inicio de sesion, las cookies de registro de usuario se crearon en validarSesion.php
             if(isset($_COOKIE["id_usuario"]) AND isset($_COOKIE["clave"])){//Si la variable $_COOKIE esta establecida o creada
                 // echo "Cookie afiliado =" . $_COOKIE["id_usuario"] ."<br>";
@@ -33,7 +31,7 @@
             else{
                 $data = array(
                     'sector' => $Sector,
-                    'servicio' => $Servico,
+                    'servicio' => $Servicio,
                 );
 
                 //Mediante el objeto load y el método view() de CI_Controller, se cargaran las vistas
@@ -63,14 +61,16 @@
             echo "<br>";
 
             $Datos=[
-                "usuarios"=>$usuarios,
+                "usuarios" => $usuarios,
+                // 'nombre' => $usuarios
             ];
             
             foreach($Datos["usuarios"] as  $usuario){
                 $ID_Afiliado = $usuario->ID_Afiliado;
+                $Nombre = $usuario->nombre;
                 echo "ID_Afiliado: " . $ID_Afiliado  . "<br>"; 
+                echo "Nombre: " . $Nombre  . "<br>"; 
             } 
-        
             //Se crean las cookies para recordar al usuario en caso de que $Recordar exista
             if(isset($_POST["recordar"]) && $_POST["recordar"] == 1){//si pidió memorizar el usuario, se recibe desde principal.php   
                  //1) Se crea una marca aleatoria en el registro de este usuario
@@ -118,15 +118,13 @@
                 //se descifra la contraseña con un algoritmo de desencriptado.
                 if($Correo == $usuario->correo AND $Clave == password_verify($Clave,$usuario_2->clave))
                 {
-                    //se crea una sesion que almacena el ID_ID_Afiliado exigida en todas las páginas de su cuenta
-            
-                    $_SESSION["ID_Afiliado"]= $ID_Afiliado;//se crea una $_SESSION llamada ID_ID_Afiliado que almacena el ID del ID_ID_Afiliado para  forzar a que entre a su cuenta solo despues de logearse.
-                    $_SESSION["Nombre"] = $usuario->nombre;//se crea una $_SESSION llamada Nombre que almacena el Nombre del ID_ID_Afiliado
-                    // echo $_SESSION["Nombre"] . "<br>";
-            
-                    $ID_Afiliado = $_SESSION["ID_Afiliado"];
-                    // echo $_SESSION["ID_Afiliado"] . "<br>";
-
+                    //se crea una sesion que almacena el ID_ID_Afiliado y el nombre exigida en todas las páginas de su cuenta
+                    $usuario_data = array(
+                        'id' => $ID_Afiliado,
+                        'nombre' => $Nombre,
+                        'logueado' => TRUE
+                    );
+                    $this->session->set_userdata($usuario_data);
                     redirect("/Ubicacion_C/index/$Sector/$Servicio",'refresh');                            
                 }
                 else{  ?>
@@ -138,6 +136,15 @@
                 }    
             }   
         }
+
+        public function cerrar_sesion(){
+            $usuario_data = array(
+            'logueado' => FALSE
+            );
+            
+            $this->session->set_userdata($usuario_data);
+            redirect('/Inicio_C');
+        }     
         
         public function RecuperarClave(){
             $Correo= $_POST["correo"];

@@ -2,10 +2,12 @@
     //se verifica si la ruta a la carpeta "system" esta definida, Constante creada en index.php
     defined('BASEPATH') OR exit('No direct script access allowed');
  ?>
+
 <script type="text/javascript" src="<?php echo base_url();?>/public/javascript/Municipios.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>/public/javascript/parroquias.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>/public/javascript/Funciones_varias.js"></script>
 <script>
-	// animacion();
+	animacion();
 </script>
 
 <div class="container contenedor_1"> 
@@ -60,8 +62,7 @@
             <label>Dirección del sector</label>
             <textarea class="form-control" id="exampleFormControlTextarea1" name="direccion" rows="3"></textarea>
         </div>
-        <div class="">
-            <!-- $Datos es recibido desde Ubicacion_C/index -->
+        <div>
             <input type="text" name="sector" value="<?php echo $sector;?>" hidden>
             <input type="text" name="servicio" value="<?php echo $servicio;?>" hidden>
             <a class="btn btn-primary boton_1" href="javascript: history.go(-2)">Regresar</a>

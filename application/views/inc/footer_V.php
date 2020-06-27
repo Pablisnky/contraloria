@@ -1,6 +1,6 @@
    <footer>
       <h4>Ciudad transparente</h4>
-      <h5>En una sociedad civilizada, todo ciudadano se comporta sanamente por el bienestar común, es inexistente el interes por el poder politico.</h5>
+      <h5>Desconocer una verdad, nos hace esclavo de una mentira.</h5>
    </footer>
 </body>
 </html>

@@ -1,38 +1,35 @@
 <?php
     //se verifica si la ruta a la carpeta "system" esta definida, Constante creada en index.php
     if(!defined('BASEPATH')) exit('No direct script access allowed');
-    session_start();
     
     class Detalle_C extends CI_Controller{
-        //Siempre cargara este metodo por defecto, solo sino se solicita otra metodo, es llamado desde Ubicacion_C/recibeUbicacion
-        public function index($RecibeDatos){       
-            
-            print_r($RecibeDatos);
-             
-             
-             exit();
-            // echo "<br>";
-            // $RecibeDatos se convierte en un array() nuevamente para obtener el ultimo elemento de la cadena
-            $RecibeDatos_array = explode(",", $RecibeDatos);    
-            // print_r($RecibeDatos_array); 
-            // echo "<br>";
-            switch($RecibeDatos_array[5]){
+
+        public function __construct(){  
+            parent::__construct();    
+            $this->load->helper('url'); //necesario por site_url() en la vista  
+        }
+
+        //En ausencia de metodo cargara este por defecto; es llamado desde Ubicacion_C/recibeUbicacion
+        public function index(){      
+            //Sesion creada en Ubicacion_C/recibeUbicacion
+            if($this->session->userdata('logueado_2')){
+                $data = array();
+                $data['servicio'] = $this->session->userdata('Servicio');
+            } 
+            // print_r($data['servicio']);
+
+            switch($data['servicio']){
                 case "aguapotable": 
-                    //$RecibeDatos se vuelve a convertir en un string
-                    $RecibeDatos_string = implode(",", $RecibeDatos_array);
-                    $Datos = $RecibeDatos_string;
                     // Se carga la vista en este mismo metodo, "ojo" no redirecciona
-                    $this->vista("paginas/detalles_V", $Datos);
+                    $this->load->view('inc/header_V');
+                    $this->load->view('fallosPorServicios/fallos_aguaPotable_V');
                 break;
                 case "aguaservida": 
-                    //$RecibeDatos se vuelve a convertir en un string
-                    $RecibeDatos_string = implode(",", $RecibeDatos_array);  
-                    $Datos = $RecibeDatos_string;
                     // Se carga la vista en este mismo metodo, "ojo" no redirecciona
-                    $this->vista_falloPorServicio("paginas/fallosPorServicios/fallos_" . $RecibeDatos_array[5] . "_V", $Datos);
+                    $this->load->view('inc/header_V');
+                    $this->load->view('fallosPorServicios/fallos_aguaServida_V');
                 break;
-            }       
-            
+            }        
         }
     }
 ?>    

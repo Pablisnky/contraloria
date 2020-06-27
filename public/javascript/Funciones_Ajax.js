@@ -36,7 +36,7 @@ var http_request = false;
         var A= document.getElementById("Estado").value;
         var B= document.getElementById("Municipio").value;
         var C= document.getElementById("Parroquia").value;
-        var url="estadisticas_C/resultados/" + A + "/" + B + "/" + C ;
+        var url="Estadisticas_C/resultados/" + A + "/" + B + "/" + C ;
         http_request.open('GET',url,true); 
         //Cuando XMLHttpRequest cambie de estado, ejecutamos esta funcion    
         peticion.onreadystatechange = respuesta_EstadisticasParroquia;

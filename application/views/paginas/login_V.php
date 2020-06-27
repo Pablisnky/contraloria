@@ -28,7 +28,7 @@
 		</div>
 		<div class="">	
 			<h2 class="h1_1">¿No tienes cuenta?
-			<a class="" href="Registro_C">Registrate</a><h2>
+			<a class="" href="<?php echo site_url('/Registro_C');?>">Registrate</a><h2>
 		</div>
 		<div class="contenedor_3" id="Contenedor_16" onclick="OcultarDiv()">
 			<form action="Login_C/RecuperarClave" method="POST" autocomplete="off">

@@ -236,6 +236,9 @@ footer{
 	line-height: 40px;
 	width: 100%;
 }
+.p_3{
+	display: none;
+}
 .simplescrollup__button {
     position: fixed;
     bottom: 1rem;/*3*/

@@ -62,7 +62,7 @@
                 <h2 class="bg-primary text-white h2_2">Comunidad</h2>
                 <ul class="ul_1">
                     <li class="label_1"><a class="a_4" href="Ubicacion_C/index/Comunidad/AguaPotable">Agua potable</a></li> 
-                    <li class="label_1"><a class="a_4" href="<?php // echo RUTA_URL . '/Ubicacion_C/index/Comunidad/AguaServida';?>">Aguas servidas</a></li>
+                    <li class="label_1"><a class="a_4" href="Ubicacion_C/index/Comunidad/AguaServida">Aguas servidas</a></li>
                     <li class=""><a class="a_5">Electricidad</a></li>
                     <li class=""><a class="a_5">Gas</a></li>
                     <li class=""><a class="a_5">Internet</a></li>
