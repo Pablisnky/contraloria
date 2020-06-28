@@ -1,10 +1,8 @@
 <?php
+    //se cargan manualmete las clases; si existe un autoload no es necesario esto
     //Se cargan la conexion a BD
     require_once("config/Configurar.php");
-
     require_once('helpers/url_helper.php');
-
-    //se cargan manualmete las clases; si existe un autoload no es necesario esto
     require_once("clases/Conexion_BD.php");
     require_once("clases/Controlador.php");
     require_once("clases/Core.php");

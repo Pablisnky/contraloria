@@ -34,7 +34,7 @@
                         'Clave' => $_POST["clave"],
                         'RepiteClave' => $_POST["confirmarClave"],
                 ];
-                // print_r($RecibeDatos);
+                print_r($RecibeDatos);
                 // echo "<br><br>"; 
                 // echo "<br><br>";
                 //Despues de evaluar con is_numeric se da un aviso en caso de fallo
@@ -52,7 +52,7 @@
                 echo "<a href='javascript: history.go(-1)'>Regresar</a>";
                 exit();
             }
-            
+
             //Se INSERTAN los datos en la BD
             $this->ConsultaRegistro_M->insertarUsuario($RecibeDatos);
 
@@ -61,15 +61,15 @@
             // echo "La clave cifrada: " . $ClaveCifrada . "<br>";
 
             //Se CONSULTA el ID_Afiliado del participante registrados en el sistema con la Cedula dado como argumento
-            $ID_Afiliado= $this->ConsultaRegistro_M->consultarUsuario($RecibeDatos['Cedula']);
-            $Datos=[
-                "ID_Afiliado" => $ID_Afiliado,
-            ];
+            // $ID_Afiliado= $this->ConsultaRegistro_M->consultarUsuario($RecibeDatos['Cedula']);
+            // $Datos=[
+            //     "ID_Afiliado" => $ID_Afiliado,
+            // ];
             // print_r($ID_Afiliado);
             // echo "<br>";
 
             //Se INSERTA el ID_Afiliado en la tabla usuario para almacenar la contraseña.
-            $this->ConsultaRegistro_M->insertarClaveUsuario($Datos, $ClaveCifrada);
+            // $this->ConsultaRegistro_M->insertarClaveUsuario($Datos, $ClaveCifrada);
 
             //Redirecciona, La función redireccionar se encuantra en url_helper.php
             redireccionar("/Inicio_C/");
