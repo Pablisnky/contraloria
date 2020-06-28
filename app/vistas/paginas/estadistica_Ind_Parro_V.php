@@ -51,7 +51,3 @@
             <?php
         }   ?>
     </div>  
-<!-- Se carga el footer -->
-<?php 
-    require(RUTA_APP . "/vistas/inc/footer.php");
-?>

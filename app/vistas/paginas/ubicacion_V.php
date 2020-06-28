@@ -1,5 +1,5 @@
 <!-- Se carga el header -->
-<?php include(RUTA_APP . "/vistas/inc/header.php"); ?>
+<?php include(RUTA_APP . "/vistas/inc/header_V.php"); ?>
 
 <script type="text/javascript" src="<?php echo RUTA_URL . '/public/javascript/Municipios.js'?>"></script> 
 <script type="text/javascript" src="<?php echo RUTA_URL . '/public/javascript/parroquias.js'?>"></script> 
@@ -70,5 +70,5 @@
 
 <!-- Se carga el footer -->
 <?php 
-    require(RUTA_APP . "/vistas/inc/footer.php");
+    require(RUTA_APP . "/vistas/inc/footer_V.php");
 ?>

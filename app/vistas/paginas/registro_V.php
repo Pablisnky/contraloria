@@ -4,7 +4,7 @@
     $_SESSION["verifica"] = $verifica; 
     
     // Se carga el header 
-    require(RUTA_APP . "/vistas/inc/header.php");
+    require(RUTA_APP . "/vistas/inc/header_V.php");
 ?>
 	<div class="container contenedor_1">
 		<h2 class="h1_1">Registro de usuarios</h2> 
@@ -42,7 +42,7 @@
 			</div>
 		</div>
 		<footer>
-	        <?php include(RUTA_APP . "/vistas/inc/footer.php");?>
+	        <?php include(RUTA_APP . "/vistas/inc/footer_V.php");?>
 		</footer>
 		
 	</div>

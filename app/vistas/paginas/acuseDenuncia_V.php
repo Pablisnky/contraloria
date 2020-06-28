@@ -1,5 +1,5 @@
 <!-- Se carga el header -->
-<?php include(RUTA_APP . "/vistas/inc/header.php"); 
+<?php include(RUTA_APP . "/vistas/inc/header_V.php"); 
 
     if(empty($Datos)){  ?>
 		<div class="container contenedor_1">

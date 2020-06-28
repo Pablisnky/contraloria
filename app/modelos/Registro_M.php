@@ -9,13 +9,19 @@
 
         public function insertarUsuario($RecibeDatos){
             //Se inserta a la BD por medio de sentencias preparadas
-            $this->db->Insertar("INSERT INTO afiliado(nombre, cedula, telefono, correo, fecha_afiliacion) VALUES (:Nombre, :Cedula, :Telefono, :Correo, NOW())");
+            $sentencia = $db->prepare("INSERT INTO afiliado(nombre, cedula, telefono, correo, fecha_afiliacion) VALUES (:Nombre, :Cedula, :Telefono, :Correo, NOW())");
 
             //Se vinculan los valores de las sentencias preparadas
-            $this->db->bind(':Nombre' , $RecibeDatos['Nombre']);
-            $this->db->bind(':Cedula' , $RecibeDatos['Cedula']);
-            $this->db->bind(':Telefono' , $RecibeDatos['Telefono']);
-            $this->db->bind(':Correo' , $RecibeDatos['Correo']);
+           $sentencia->bindParam(':Nombre', $nombre);
+           $sentencia->bindParam(':Cedula', $cedula);
+           $sentencia->bindParam(':Telefono', $telefono);
+           $sentencia->bindParam(':Correo', $correo);
+
+           // insertar una fila
+            $nombre = $RecibeDatos['Nombre'];
+            $cedula = $RecibeDatos['Cedula'];
+            $telefono = $RecibeDatos['Telefono'];
+            $correo = $RecibeDatos['correo'];
 
             //Se ejecuta la inserción de los datos en la tabla
             if($this->db->execute()){

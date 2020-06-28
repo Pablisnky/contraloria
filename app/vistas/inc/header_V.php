@@ -26,13 +26,12 @@
 			<nav class="navbar navbar-expand-lg navbar-light  nav_1">
 				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 					<div class="navbar-nav ">
-						<a class="nav-item nav-link active" href="<?php echo RUTA_URL . '/Inicio_C';?>">Inicio<span class="sr-only">(current)</span></a>
-						<a class="nav-item nav-link" href="#">Nuestro ADN</a>
-						<a class="nav-item nav-link" href="<?php echo RUTA_URL . '/Estadisticas_C';?>">Estadisticas</a>
+						<a class="nav-item nav-link active" href="<?php echo RUTA_URL . '/Inicio_C';?>">Inicie sesión<span class="sr-only">(current)</span></a>
 						<a class="nav-item nav-link" href="<?php echo RUTA_URL . '/Registro_C';?>">Registrase</a>
+						<a class="nav-item nav-link" href="<?php echo RUTA_URL . '/NuestroADN_C';?>">Nuestro ADN</a>
+						<a class="nav-item nav-link" href="<?php echo RUTA_URL . '/Estadisticas_C';?>">Estadisticas</a>
 						<a class="nav-item nav-link" href="<?php echo RUTA_URL . '/Login_C';?>">Participación social</a>
-						<a class="nav-item nav-link" href="<?php echo RUTA_URL . '/Frases_C';?>">Frases</a>
-						<a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Donaciones</a>
+						<a class="nav-item nav-link" href="<?php echo RUTA_URL . '/Donar_C';?>">Donar</a>
 					</div>
 				</div>
 					<?php

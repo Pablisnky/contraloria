@@ -1,7 +1,7 @@
 <!-- Se carga el header -->
 <?php
 // session_start(); 
-include(RUTA_APP . "/vistas/inc/header.php");
+include(RUTA_APP . "/vistas/inc/header_V.php");
 ?>
 
 		<div class="container contenedor_1">
@@ -126,7 +126,7 @@ include(RUTA_APP . "/vistas/inc/header.php");
         </div>
 <!-- Se carga el footer -->
 <?php 
-    require(RUTA_APP . "/vistas/inc/footer.php");
+    require(RUTA_APP . "/vistas/inc/footer_V.php");
 ?>
 
 <script type="text/javascript" src="<?php echo RUTA_URL . '/public/javascript/scrollUp.js';?>"></script>
