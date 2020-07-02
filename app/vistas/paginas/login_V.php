@@ -14,7 +14,7 @@
 					<div class="form-group">
 						<input class="form-control" type="password" name="clave_Arr" id="Clave" placeholder="Contraseña" autocomplete="off">
 					</div>
-					<div class="contenedor_13">
+					<div class="">
 						<input type="checkbox" id="Recordar" name="recordar" value="1">
 						<label class="recordar" for="Recordar">Recordar datos en este equipo.</label>
 					</div>
@@ -41,10 +41,7 @@
 			</form>
 		</div>
 	</div>
-	<footer>
-		<?php include(RUTA_APP . "/vistas/inc/footer_V.php");?>
-	</footer>
-	</body>
-</html>	
+		
+<?php include(RUTA_APP . "/vistas/inc/footer_V.php");?>
 
 <script type="text/javascript" src="../javascript/validarFormularios.js"></script>
