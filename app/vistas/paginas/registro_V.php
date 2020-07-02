@@ -1,7 +1,4 @@
 <?php
-	session_start(); //se crea una sesion llamada verifica, esta sesión es exigida cuando se entra en la pagina que recibe los datos del formulario de registro, para evitar que un usuario recarge la pagina que recibe y cargue los datos nuevamente a la BD
-	$verifica = 1906;  
-    $_SESSION["verifica"] = $verifica; 
     
     // Se carga el header 
     require(RUTA_APP . "/vistas/inc/header_V.php");
@@ -40,11 +37,7 @@
 					<input class="btn btn-primary boton_1" type="submit" name="Registrarse" value="Registrarse" style="display: block; width: 120px;">
 				</form>
 			</div>
-		</div>
-		<footer>
-	        <?php include(RUTA_APP . "/vistas/inc/footer_V.php");?>
-		</footer>
-		
+		</div>		
 	</div>
-	</body>
-</html>
+	
+<?php include(RUTA_APP . "/vistas/inc/footer_V.php");?>
