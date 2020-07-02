@@ -3,7 +3,7 @@
     //Se cargan la conexion a BD
     require_once("config/Configurar.php");
     require_once('helpers/url_helper.php');
-    require_once("clases/Conexion_BD.php");
+    // require_once("clases/Conexion_BD.php");
     require_once("clases/Controlador.php");
     require_once("clases/Core.php");
 
