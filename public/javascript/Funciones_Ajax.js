@@ -33,10 +33,17 @@ var http_request = false;
 //-------------------------------------------------------------------------------------------------
     function llamar_EstadisticasParroquia(){//Es llamada desde Estadistica_V.php
         document.getElementById('Loading').style.display = 'block';
-        var A= document.getElementById("Estado").value;
-        var B= document.getElementById("Municipio").value;
-        var C= document.getElementById("Parroquia").value;
-        var url="estadisticas_C/resultados/" + A + "/" + B + "/" + C ;
+        let A = document.getElementById("Estado").value;
+        let B = document.getElementById("Municipio").value;
+        let C = document.getElementById("Parroquia").value;
+        let porNombre = document.getElementsByName("frecuencia");
+        //Se recorren todos los valores del radio button para encontrar el seleccionado
+        for(var i=0; i<porNombre.length; i++){
+            if(porNombre[i].checked){
+                D= porNombre[i].value;
+            }
+        }
+        var url="estadisticas_C/resultados/" + A + "/" + B + "/" + C + "/" + D;
         http_request.open('GET',url,true); 
         //Cuando XMLHttpRequest cambie de estado, ejecutamos esta funcion    
         peticion.onreadystatechange = respuesta_EstadisticasParroquia;
@@ -61,3 +68,31 @@ var http_request = false;
     
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
+
+// function llamar_IndicadoresSemanal(){//Es llamada desde Estadistica_Ind_Parro_V.php
+//     document.getElementById('Loading').style.display = 'block';
+//     var A= document.getElementById("Estado").value;
+//     var B= document.getElementById("Municipio").value;
+//     var C= document.getElementById("Parroquia").value;
+//     var url="estadisticas_C/resultados/" + A + "/" + B + "/" + C ;
+//     http_request.open('GET',url,true); 
+//     //Cuando XMLHttpRequest cambie de estado, ejecutamos esta funcion    
+//     peticion.onreadystatechange = respuesta_IndicadoresSemanal;
+//     peticion.setRequestHeader("content-type","application/x-www-form-urlencoded");
+//     // Enviamos los datos con el metodo send
+//     peticion.send("null");
+// }                                                           
+// function respuesta_IndicadoresSemanal(){
+//     if(peticion.readyState == 4){
+//         if(peticion.status == 200){
+//             document.getElementById('Mostrar_Estadisticas').innerHTML=peticion.responseText;
+//             document.getElementById('Loading').style.display = 'none';
+//         } 
+//         else{
+//             alert('Hubo problemas con la petición.');
+//         }
+//     }
+//     else{ //en caso contrario, mostramos un gif simulando una precarga
+//         document.getElementById('Mostrar_evaluar').innerHTML='Cargando registros';
+//     }
+// }
