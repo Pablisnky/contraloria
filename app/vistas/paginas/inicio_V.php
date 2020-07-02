@@ -1,14 +1,11 @@
 <!-- Se carga el header -->
-<?php
-// session_start(); 
-include(RUTA_APP . "/vistas/inc/header_V.php");
-?>
+<?php include(RUTA_APP . "/vistas/inc/header_V.php");  ?>
 
 		<div class="container contenedor_1">
             <div class="contenedor_8">
                 <div class="row contenedor_7">
                     <div class="col-sm-12">
-                        <p class="p_1">La participación ciudadana en el control y evaluación sobre la gestión publica, es necesaria para prevenir la corrupcion, el fraude y la ineficiencia, a la vez que ayuda a los administradores y dirigentes gubernamentales a conocer lo que sucede en sus comunidades y en sus diferentes regiones. Conectar Ambas premisas es el objetivo de esta plataforma.</p>
+                        <p class="p_1">La participación ciudadana en el control y evaluación sobre la gestión publica, es necesaria para prevenir la corrupcion, el fraude y la ineficiencia, a la vez que ayuda a los administradores y dirigentes gubernamentales a conocer lo que sucede en sus comunidades y en sus diferentes regiones. Conectar Ambas premisas y realizar metrica con machine learning para prevenir malas practicas en el manejo del asunto público es el objetivo de esta plataforma.</p>
                     </div>
                 </div>
                 <div class="row">
@@ -19,7 +16,7 @@ include(RUTA_APP . "/vistas/inc/header_V.php");
                         <li class="li_1">Separe el  aspecto ideológico-partidista  de la  práctica  de  la  contraloría  social  y  de  la  evaluación  de  la  gestión  pública</li>
                         <li class="li_1">La contraloría social no debe constituir un “mecanismo para el pase de factura personal"</li>
                         <li class="li_1"> El control social es un mecanismo de acción en la vigilancia, supervisión, seguimiento y control de los asuntos públicos.</li>
-                        <li class="li_1">Solo puede realizar cinco denuncias en la semana</li>
+                        <li class="li_1">Solo puede realizar diez denuncias en el mes.</li>
                     </ul>     
                 </div>   
                 <div class="row">
