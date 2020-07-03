@@ -1,5 +1,5 @@
 <?php
-    // session_start();
+    session_start();
 
     class Donar_C extends Controlador{
 
