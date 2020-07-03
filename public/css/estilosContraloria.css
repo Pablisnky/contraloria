@@ -60,8 +60,10 @@ body, html{
 	background-color: rgba(6, 6, 29, 1) !important;
 	color: white;
 	border-radius: 5px;
+	padding: 0px 10px !important;
 }
 .boton_1:hover{
+	cursor: pointer;
 	background-color: rgba(6, 6, 29, 0.9) !important;
 }
 .contenedor_1{
@@ -105,10 +107,10 @@ body, html{
 	padding: 1%;
 	border-radius: 10px;
 }
-.contenedor_7{
-	display: none;
-	grid-template-columns: 20fr 20fr 20fr 20fr;
-	margin-bottom: 1%;
+.contenedor_7{/*estadisticas_V*/
+	display: none; 
+	grid-template-columns: 30fr 23fr 23fr 23fr;
+	margin-top: 3%;
 }
 .contenedor_8{
 	min-height: 40vw !important;
@@ -132,6 +134,20 @@ body, html{
 	height: 30%;
 	margin-top: 5%;
 }
+.contenedor_14{/*estadistica_V*/
+	margin-top: 10%;
+	margin-bottom: 5%; 
+}
+.contenedor_15{/*estadistica_V*/
+	min-height: 70vh;
+}
+.contenedor_16{/*estadistica_V*/
+	margin-top: 2%;
+	z-index: 0;
+}
+.contenedor_17{/*ubicacion_V*/
+	min-height: 70vh;
+}
 .disable{/*estadistica_Ind_Parro_V*/
 	/* color:rgb(209, 209, 230) ; */
 }
@@ -150,15 +166,13 @@ body, html{
 .h1_1{
 	text-align: center;
 }
-.h1_2{/*estadisticas_V*/
+.h1_2{/*graficos_V - estadisticas_V*/
 	font-size: 1.5em;
-	margin-top: 10%;
-	margin-bottom: 5%;
+	padding-top: 2%;
 	text-align: center;
 }
-.h1_3{
-	font-size: 1.5em;
-	margin-top: 3%;
+.h1_3{/*estadisticas_V*/
+	font-size: 1.4em;
 }
 .h2_1{
 	background-color:rgba(0, 0, 255, 0.1) ;
@@ -184,12 +198,12 @@ body, html{
 	width: 100%;
 	text-align: center;
 }
-.h4_1{
-	min-height: 48px;
+.h4_1{/*footer*/
 	text-align: center;
 	font-size: 1.3em;
+	padding-top: 0.5%;
 }
-.h5_1{
+.h5_1{/*footer*/
 	text-align: center;
 	font-size: 1.1em;
 }
@@ -203,7 +217,7 @@ body, html{
 	width: 100%;
 	z-index: 2;
 }
-.label_1{/*inicio_V - estadistica_Ind_Parro_V*/
+.label_1{/*inicio_V - estadistica_Ind_Parro_V - estadistica_V*/
 	cursor: pointer;
 	padding: 0% 1%;
 }
