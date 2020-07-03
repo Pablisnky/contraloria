@@ -1,20 +1,22 @@
 <?php
     class Registro_C extends Controlador{
         public function __construct(){            
-            //Se accede al servidor de base de datos; Se instancia un objeto correspondiente que se comunica con la BD 
+            //Se accede al servidor de base de datos; Se instancia un objeto correspondiente  que se comunica con la BD 
             $this->ConsultaRegistro_M = $this->modelo("Registro_M");           
         }
         
         //Siempre cargara el metodo por defecto sino se pasa un metodo especifico
         public function index(){
-            // echo "Carga la vista por defecto correspondiente a este controlador: registro_V"  . "<br>";
+            session_start(); //se crea una sesion llamada verifica, esta sesión es exigida cuando se entra en la pagina que recibe los datos del formulario de registro, para evitar que un usuario recarge la pagina que recibe y cargue los datos nuevamente a la BD
+            $verifica = 1906;  
+            $_SESSION["verifica"] = $verifica; 
 
             //Carga la vista 
             $this->vista("paginas/registro_V");
         }
    
         public function recibeRegistro(){            
-            //Captura todos los campos del formulario, se recibe desde .php 
+            // Se reciben todos los campos del formulario, desde registro_V.php 
             if($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["nombre"]) && !empty($_POST["cedula"]) && !empty($_POST["telefono"]) && !empty($_POST["correo"]) && !empty($_POST["clave"]) && !empty($_POST["confirmarClave"])){//si son enviados por POST y sino estan vacios, entra aqui
                 $RecibeDatos = [
                     'Nombre' => filter_input(INPUT_POST, "nombre", FILTER_SANITIZE_STRING),
@@ -26,6 +28,7 @@
                 ];
                 // print_r($RecibeDatos);
                 // echo "<br><br>";
+
                 $RecibeDatos = [
                         'Nombre' => ucwords($_POST["nombre"]),                       
                         'Cedula' => is_numeric($_POST["cedula"]) ? $_POST["cedula"]: false,
@@ -34,7 +37,7 @@
                         'Clave' => $_POST["clave"],
                         'RepiteClave' => $_POST["confirmarClave"],
                 ];
-                print_r($RecibeDatos);
+                // print_r($RecibeDatos);
                 // echo "<br><br>"; 
                 // echo "<br><br>";
                 //Despues de evaluar con is_numeric se da un aviso en caso de fallo
