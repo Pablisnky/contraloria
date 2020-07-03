@@ -22,7 +22,7 @@
                 <div class="row">
                     <h2 class="h2_2">Confidencialidad</h2>
                 </div>
-                <div class="row contenedor_7">
+                <div class="row ">
                         <p class="p_2">Los datos suministrados a la plataforma son cifrados antes de ser almacenados y no pueden ser rastreados</p>  
                 </div>    
                 <div>
