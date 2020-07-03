@@ -2,10 +2,10 @@
     session_start();
 
     class Ubicacion_C extends Controlador{
-        public function __construct(){            
-            //Se accede al servidor de base de datos; Se instancia un objeto correspondiente que se comunica con la BD 
-            $this->ConsultaUbicacion_M = $this->modelo("Ubicacion_M");           
-        }
+        // public function __construct(){            
+        //     //Se accede al servidor de base de datos; Se instancia un objeto correspondiente que se comunica con la BD 
+        //     $this->ConsultaUbicacion_M = $this->modelo("Ubicacion_M");           
+        // }
         
         //Siempre cargara este metodo por defecto, solo sino se solicita otra metodo, los parametros los recibe de inicio_V.php - Login_C  -  login_Vrecord.php
         public function index($Parametros){
@@ -38,12 +38,8 @@
                 echo "<a href='javascript: history.go(-1)'>Regresar</a>";
                 exit();
             }
-            // print_r($RecibeDatos);
-            // echo "<br>";
             
             $RecibeDatos = implode(",", $RecibeDatos);
-            // print_r($RecibeDatos);
-            // echo "<br>";
 
             header("location:" . RUTA_URL . "/Detalle_C/index/" . $RecibeDatos);  
         }
