@@ -1,4 +1,8 @@
-        <div class="container contenedor_1">
+<!-- Vista cargada desde Detalle_C -->
+<?php include(RUTA_APP . "/vistas/inc/header_V.php"); ?>
+
+    <div class="container contenedor_1">
+        <div class="contenedor_15">
             <p>A la fecha, no se ha emitido un comunicado oficial aclarando razónes o estableciendo plazos para hacer correcciones de fallos en su comunidad.</p>
                 
             <h2 class="h1_3">Indique el fallo en el servicio</h2>
@@ -27,6 +31,10 @@
                 <a class="btn btn-primary boton_1" href="javascript: history.go(-1)">Regresar</a>
                 <input type="submit" class="btn btn-primary boton_1" value="Continuar">
             </form>           
-            <div id="Resultado"></div>
-		</div>
-         
+        </div>
+    </div>
+
+<?php
+    // Se carga el footer 
+    require(RUTA_APP . "/vistas/inc/footer_V.php");
+?>      
