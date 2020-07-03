@@ -3,22 +3,24 @@
 
     if(empty($Datos)){  ?>
 		<div class="container contenedor_1">
-            <h2>Su denuncia a sido procesada satisfactoriamente. </h2>
-            <p>En un plazo de 20 días podra volver a realizar la denuncia sino han resuelto su problema</p>
-            <p>Se registro con el código 123231</p>
-            <p>Este fallo ha sido reportado 30 veces esta semana</p>
-            <p>Este fallo ha sido reportado 60 veces este mes</p>
-            <p>Este fallo ha sido reportado 330 veces este año</p>
-            <p>Si desea ver la recursividad de la falla vea nuestras estadisticas</p>
+            <div class="contenedor_15">
+                <h2>Su denuncia a sido procesada satisfactoriamente. </h2>
+                <p>En un plazo de 20 días podra volver a realizar la denuncia sino han resuelto su problema</p>
+                <p>Se registro con el código 123231</p>
+                <p>Este fallo ha sido reportado 30 veces esta semana</p>
+                <p>Este fallo ha sido reportado 60 veces este mes</p>
+                <p>Este fallo ha sido reportado 330 veces este año</p>
+                <p>Si desea ver la recursividad de la falla vea nuestras estadisticas</p>
 
-            <br><br>
-                            
-            ******************************************************************************
-            <p>20 días es tiempo suficiente para que los responsables tomen acciones, pasado ese tiempo usted podra volver a manifestar su inconfomidad con el servicio si continua el fallo</p>
-                            
-            <a class="btn btn-primary boton_1" href="<?php echo RUTA_URL . '/CerrarS_C'?>">Cerrar sesión</a>
-            <a class="btn btn-primary boton_1" href="<?php echo RUTA_URL . '/Inicio_C';?>">Continuar denunciando</a>              
-		</div>  
+                <br><br>
+                                
+                ******************************************************************************
+                <p>20 días es tiempo suficiente para que los responsables tomen acciones, pasado ese tiempo usted podra volver a manifestar su inconfomidad con el servicio si continua el fallo</p>
+                                
+                <a class="btn btn-primary boton_1" href="<?php echo RUTA_URL . '/CerrarS_C'?>">Cerrar sesión</a>
+                <a class="btn btn-primary boton_1" href="<?php echo RUTA_URL . '/Inicio_C';?>">Continuar denunciando</a>              
+            </div>    
+        </div>  
             <?php
     }
     else{   ?>  
@@ -32,5 +34,5 @@
     }   
     
 //  Se carga el footer 
-    require(RUTA_APP . "/vistas/inc/footer.php");
+    require(RUTA_APP . "/vistas/inc/footer_V.php");
 ?>
