@@ -1,15 +1,14 @@
 <?php
     session_start();
-
     class Login_C extends Controlador{
-        public function __construct(){
-            //Se accede al servidor de base de datos
-            //Se solicita informacion a la BD, se llama al metodo modelo de la clase Controlador, que devuelve una instacia del objeto 
+        
+        public function __construct(){           
+            //Se accede al servidor de base de datos; Se instancia un objeto correspondiente  que se comunica con la BD 
             $this->ConsultaLogin_M = $this->modelo("Login_M");
         }
 
-        //Siempre cargara este metodo por defecto, solo sino se solicita otra metodo, es llamadao desde Ubicacion_C
-        public function index($Parametros){
+        //Siempre cargara el metodo por defecto sino se pasa un metodo especifico, es llamadao desde Ubicacion_C - header_V
+        public function index($Parametros = FALSE){
             //Se verifica si el usuario esta memorizado en las cookie de su computadora y las compara con la BD, para recuperar sus datos y autorellenar el formulario de inicio de sesion, las cookies de registro de usuario se crearon en validarSesion.php
             if(isset($_COOKIE["id_usuario"]) AND isset($_COOKIE["clave"])){//Si la variable $_COOKIE esta establecida o creada
                 // echo "Cookie afiliado =" . $_COOKIE["id_usuario"] ."<br>";
@@ -46,15 +45,13 @@
 
             //Se CONSULTA el usuario registrados en el sistema con el correo dado como argumento
             $usuarios = $this->ConsultaLogin_M->consultarAfiliados($Correo);
-            // print_r($usuarios);
-            $Datos=[
-                "usuarios"=>$usuarios,
-            ];
+            while($arr = $usuarios->fetch(PDO::FETCH_ASSOC)){
+                $ID_Afiliado = $arr['ID_Afiliado'];
+                $CorreoBD = $arr['correo'];
+                $Nombre = $arr['nombre'];
+            }
             
-            foreach($Datos["usuarios"] as  $usuario){
-                $ID_Afiliado = $usuario->ID_Afiliado;
-                // echo "ID_Afiliado: " . $ID_Afiliado  . "<br>"; 
-            } 
+            // echo "ID_Afiliado: " . $ID_Afiliado  . "<br>"; 
         
             //Se crean las cookies para recordar al usuario en caso de que $Recordar exista
             if(isset($_POST["recordar"]) && $_POST["recordar"] == 1){//si pidió memorizar el usuario, se recibe desde principal.php   
@@ -91,33 +88,34 @@
 
                 //Se CONSULTA la contraseña enviada, que sea igual a la contraseña de la BD
                 $usuarios_2= $this->ConsultaLogin_M->consultarContrasena($ID_Afiliado);
-                $Datos_2=[
-                    "usuarios_2"=>$usuarios_2,
-                ];
-
-                // print_r($usuarios_2);
-                // echo "<br>";
+                while($arr = $usuarios_2->fetch(PDO::FETCH_ASSOC)){
+                    $ClaveBD = $arr['clave'];
+                }
+              
+                echo "Clave Usuario descifrada= " .  password_verify($Clave, $ClaveBD) . "<br>";
                 
-                foreach($Datos_2["usuarios_2"] as $usuario_2){
-                    // echo "Clave Usuario cifrada= " . $usuario_2->clave . "<br>"; 
-                    // echo "Clave Usuario descifrada= " .  password_verify($Clave,$usuario_2->clave) . "<br>";
-                } 
         
                 //se descifra la contraseña con un algoritmo de desencriptado.
-                if($Correo == $usuario->correo AND $Clave == password_verify($Clave,$usuario_2->clave))
+                if($Correo == $CorreoBD AND $Clave == password_verify($Clave, $ClaveBD))
                 {
                     //se crea una sesion que almacena el ID_ID_Afiliado exigida en todas las páginas de su cuenta
             
-                    $_SESSION["ID_Afiliado"]= $ID_Afiliado;//se crea una $_SESSION llamada ID_ID_Afiliado que almacena el ID del ID_ID_Afiliado para  forzar a que entre a su cuenta solo despues de logearse.
-                    $_SESSION["Nombre"] = $usuario->nombre;//se crea una $_SESSION llamada Nombre que almacena el Nombre del ID_ID_Afiliado
+                    $_SESSION["ID_Afiliado"] = $ID_Afiliado;//se crea una $_SESSION llamada ID_ID_Afiliado que almacena el ID del ID_ID_Afiliado para  forzar a que entre a su cuenta solo despues de logearse.
+                    $_SESSION["Nombre"] = $Nombre;//se crea una $_SESSION llamada Nombre que almacena el Nombre del ID_ID_Afiliado
                     // echo $_SESSION["Nombre"] . "<br>";
             
                     $ID_Afiliado = $_SESSION["ID_Afiliado"];
                     // echo $_SESSION["ID_Afiliado"] . "<br>";
  
                     //Se da acceso y se redirije a la pagina 
-                    $Parametros = $DatosVarios;
-                    header("location:" . RUTA_URL . "/Ubicacion_C/index/" . $Parametros);                            
+                    if(!empty($DatosVarios)){
+                        $Parametros = $DatosVarios;
+                        header("location:" . RUTA_URL . "/Ubicacion_C/index/" . $Parametros);
+                    }
+                    else{
+                        //Carga la vista 
+                        $this->vista("paginas/inicio_V");
+                    }
                 }
                 else{  ?>
                         <script>
