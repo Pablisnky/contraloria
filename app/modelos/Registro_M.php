@@ -1,18 +1,20 @@
 <?php
-    class Registro_M{
-        private $db;
+    require(RUTA_APP . "/clases/Conexion_BD.php");
 
-        public function __construct(){
-            //Se conecta a la BD instanciando la clase Conexion_BD
-            // $this->db = new Conexion_BD;           
+    class Registro_M extends Conexion_BD{
+
+        public function __construct(){    
+            parent::__construct();       
         }
 
         public function insertarUsuario($RecibeDatos){
             //Se inserta a la BD por medio de sentencias preparadas
-            $conn = new PDO("mysql:host=localhost; dbname=contralo_ria", 'root', '');
-            $stmt = $conn->prepare("INSERT INTO afiliado(nombre, cedula, telefono, correo, fecha_afiliacion) VALUES (:Nombre, :Cedula, :Telefono, :Correo, NOW())");
+            // $this->Conexion = new PDO("mysql:host=localhost; dbname=contralo_ria", 'root', '');
+            
+            $stmt = $this->dbh->prepare("INSERT INTO afiliado(nombre, cedula, telefono, correo, fecha_afiliacion) VALUES (:Nombre, :Cedula, :Telefono, :Correo, NOW())");
 
             //Se vinculan los valores de las sentencias preparadas
+            //statement (ejecutar consulta)
             $stmt->bindParam(':Nombre', $nombre);
             $stmt->bindParam(':Cedula', $cedula);
             $stmt->bindParam(':Telefono', $telefono);
@@ -23,9 +25,14 @@
             $cedula = $RecibeDatos['Cedula'];
             $telefono = $RecibeDatos['Telefono'];
             $correo = $RecibeDatos['Correo'];
-
+            
             //Se ejecuta la inserción de los datos en la tabla
-            $stmt->execute();
+            if($stmt->execute()){
+                return true;
+            }
+            else{
+                return false;
+            }
         }      
 
         // public function consultarUsuario($Cedula){         
