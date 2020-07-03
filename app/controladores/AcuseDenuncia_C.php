@@ -2,6 +2,7 @@
     session_start();
 
     class AcuseDenuncia_C extends Controlador{
+        
         public function __construct(){            
             //Se accede al servidor de base de datos; Se instancia un objeto correspondiente que se comunica con la BD 
             $this->ConsultaAcuse_M = $this->modelo("AcuseDenuncia_M");           
@@ -55,16 +56,11 @@
                 
                 //Se CONSULTA el ID_Ubicacion que se acaba de ingresa en la BD
                 $ID_Ubicacion = $this->ConsultaAcuse_M->consultarID_Ubicacion($this->Aleatorio);
-                //  print_r($ID_Ubicacion);
-                $Datos=[
-                    "ID_Ubicacion" => $ID_Ubicacion,
-                ];
                 
-                foreach($Datos["ID_Ubicacion"] as  $usuario){
-                    $ID_Ubicacion = $usuario->ID_Ubicacion;
-                    // echo "ID_Ubicacion: " . $ID_Ubicacion  . "<br>"; 
+                foreach($ID_Ubicacion as $usuario){
+                    $ID_Ubicacion = $usuario['ID_Ubicacion'];
+                    //  echo "ID_Ubicacion: " . $ID_Ubicacion  . "<br>"; 
                 } 
-                // var_dump($Datos['ID_Ubicacion']);
 
                 //Se añaden 20 días a la fecha de la denuncia
                 $fecha = date('Y-m-d');
@@ -82,34 +78,31 @@
                 //Se CONSULTA la fecha de denuncia, la fecha de caducidad y e código de denuncia
                 $fecha = $this->ConsultaAcuse_M->consultarFecha($ID_Afiliado, $CodigoFallo);
                 // print_r($fecha);
+                while($arr = $fecha->fetch(PDO::FETCH_ASSOC)){
+                    $FechaCaducidad = $arr['fechaCaducidad'];
+                    $FechaDenuncia = $arr['fechaDenuncia'];
+                    $Aleatorio = $arr['aleatorio'];
+                }
 
-                $Datos=[
-                    "fechas" => $fecha,
-                ];
-                
-                foreach($Datos["fechas"] as $Fecha){
-                    $Fecha_Ca = $Fecha->fechaCaducidad;
-                    $Fecha_De = $Fecha->fechaDenuncia;
-                    $Codigo = $Fecha->aleatorio;  
-                    // echo "Fecha denuncia: " . $Fecha_De ."<br>";
-                    // echo "Fecha caducidad: " . $Fecha_Ca ."<br>";
-                } 
-
+                // echo "Fecha denuncia: " . $FechaDenuncia ."<br>";
+                // echo "Fecha caducidad: " . $FechaCaducidad ."<br>";
+                // echo "Aleatorio: " . $Aleatorio ."<br>";
+                   
                 //Se determina el día actual para el calculo de dias restantes
                 $FechaActual = date("Y-m-d");
                 // echo "Fecha actual: " .  $FechaActual ."<br>";
                 //Se calculan la diferencia en dias
                 $date1 = new DateTime($FechaActual);
-                $date2 = new DateTime($Fecha_Ca);
+                $date2 = new DateTime($FechaCaducidad);
                 $diff = $date1->diff($date2); 
                 // print_r($diff); 
                 $Dias = $diff->d;
                 
                 // echo $Dias;
                 //Se cambia el formato de la fecha de denuncia, solo para mostar en pantalla
-                $Fecha_De = date('d-m-Y', strtotime($Fecha_De));
+                $Fecha_De = date('d-m-Y', strtotime($FechaDenuncia));
 
-                $Datos = [$Fecha_De, $Dias, $Codigo];
+                $Datos = [$Fecha_De, $Dias, $Aleatorio];
                 $this->vista("paginas/acuseDenuncia_V", $Datos);
             }
         }
