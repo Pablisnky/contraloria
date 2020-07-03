@@ -1,7 +1,6 @@
-<?php
-    session_start();
-    
+<?php    
     class Detalle_C extends Controlador{
+        
         //Siempre cargara este metodo por defecto, solo sino se solicita otra metodo, es llamado desde Ubicacion_C/recibeUbicacion
         public function index($RecibeDatos){       
             // print_r($RecibeDatos); 
@@ -23,10 +22,9 @@
                     $RecibeDatos_string = implode(",", $RecibeDatos_array);  
                     $Datos = $RecibeDatos_string;
                     // Se carga la vista en este mismo metodo, "ojo" no redirecciona
-                    $this->vista("paginas/fallosPorServicios//fallos_aguaServida_V, $Datos);
+                    $this->vista("paginas/fallosPorServicios/fallos_aguaServida_V", $Datos);
                 break;
-            }       
-            
+            }      
         }
     }
 ?>    
