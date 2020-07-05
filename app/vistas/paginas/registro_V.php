@@ -17,7 +17,7 @@
 							<input class="form-control" type="text" name="cedula" id="Cedula" placeholder="Cedula" onchange="" autocomplete="off"><!--  return literal() se encuentra en validarFormulario.js -->
 						</div>
 						<div class="form-group">
-							<input class="form-control" type="text" name="telefono" id="Telefono" placeholder="Telefono" onchange="" autocomplete="off"><!--  return literal() se encuentra en validarFormulario.js -->
+							<input class="form-control" type="text" name="telefono" id="Telefono" placeholder="Telefono (opcional)" onchange="" autocomplete="off"><!--  return literal() se encuentra en validarFormulario.js -->
 						</div>
 						<div class="form-group">
 							<input class="form-control" type="text" name="correo" id="Correo" placeholder="Correo electronico" onchange="validarFormatoCorreo(); setTimeout(llamar_verificaCorreo,200);" onclick="ColorearCorreo()"; autocomplete="off">
