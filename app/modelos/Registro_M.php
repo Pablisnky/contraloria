@@ -14,7 +14,7 @@
             $stmt = $this->dbh->prepare("INSERT INTO afiliado(nombre, cedula, telefono, correo, fecha_afiliacion) VALUES (:Nombre, :Cedula, :Telefono, :Correo, NOW())");
 
             //Se vinculan los valores de las sentencias preparadas
-            //statement (ejecutar consulta)
+            //ztmt es una abreviatura de statement 
             $stmt->bindParam(':Nombre', $nombre);
             $stmt->bindParam(':Cedula', $cedula);
             $stmt->bindParam(':Telefono', $telefono);
