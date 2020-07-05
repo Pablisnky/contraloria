@@ -341,6 +341,9 @@ body, html{
 .textarea_1{
 	display: none;
 }
+.textarea_2{/*graficos_V*/
+	border: none;
+}
 .ul_1{
 	padding-left:30%;
 }
