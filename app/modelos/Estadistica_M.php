@@ -14,11 +14,13 @@
         //     return $resultados;
         // }
         
-        public function consultarIndicadoresParroquia($Estado, $Municipio, $Parroquia){
-            $stmt = $this->dbh->prepare("SELECT * FROM ubicacion INNER JOIN fallos ON ubicacion.ID_Ubicacion=fallos.ID_Ubicacion WHERE estado = :Estado AND municipio = :Municipio AND parroquia = :Parroquia GROUP BY servicio");
+        //Consulta problemas denunciados segun periodo de tiempo, por defecto 7 dias
+        public function consultarIndicadoresParroquia($Estado, $Municipio, $Parroquia, $FechaConsulta){
+            $stmt = $this->dbh->prepare("SELECT * FROM ubicacion INNER JOIN fallos ON ubicacion.ID_Ubicacion=fallos.ID_Ubicacion WHERE estado = :Estado AND municipio = :Municipio AND parroquia = :Parroquia AND fechaDenuncia >= :FechaDenuncia GROUP BY servicio");
             $stmt->bindValue(':Estado', $Estado, PDO::PARAM_STR);
             $stmt->bindValue(':Municipio', $Municipio, PDO::PARAM_STR);
             $stmt->bindValue(':Parroquia', $Parroquia, PDO::PARAM_STR);
+            $stmt->bindValue(':FechaDenuncia', $FechaConsulta, PDO::PARAM_STR);
             $stmt->execute();
             return $stmt;
         } 
