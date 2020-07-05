@@ -17,7 +17,7 @@
                             PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING //ERRMODE_EXCEPTION   usar en remoto
                        );
             try{
-                //Se crea una instancia de PDO, Esta linea es la que hace la conexion a la BD
+                //Se crea un objeto PDO, Esta linea es la que hace la conexion a la BD
                 $this->dbh = new PDO($dsn, $this->Usuario, $this->Password, $Opciones);
                 // $this->dbh = new PDO("mysql:host=localhost; dbname=contralo_ria", 'root', '');
                 $this->dbh->exec("set names utf8");
