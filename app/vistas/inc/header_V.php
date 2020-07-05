@@ -19,30 +19,37 @@
 		<!-- <link rel="shortcut icon" type="image/png" href="../images/logo_aplicacion/logo_Mira_horebi.png"> -->
         
 		 <script type="text/javascript" src="<?php echo RUTA_URL . '/public/javascript/Funciones_varias.js';?>"></script> 
-        <!--<script type="text/javascript" src="../javascript/Funciones_Ajax.js"></script> -->
 	</head>
     <body>		
 		<header class="header_1">
 			<nav class="navbar navbar-expand-lg navbar-light  nav_1">
+				<a class="navbar-brand" href="<?php echo RUTA_URL . '/Inicio_C';?>">
+					<img src="<?php echo RUTA_URL;?>/public/images/logo.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy"> Ciudad Transparente
+				</a>
 				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-					<div class="navbar-nav ">
-						<a class="nav-item nav-link active" href="<?php echo RUTA_URL . '/Inicio_C';?>">Home</a>
-						<a class="nav-item nav-link active" href="<?php echo RUTA_URL . '/Login_C';?>">Inicie sesión</a>
-						<a class="nav-item nav-link" href="<?php echo RUTA_URL . '/Registro_C';?>">Registrase</a>
-						<a class="nav-item nav-link" href="<?php echo RUTA_URL . '/NuestroADN_C';?>">Nuestro ADN</a>
+					<div class="navbar-nav contenedor_20">
+						<!-- <a class="nav-item nav-link" href="<?php echo RUTA_URL . '/Inicio_C';?>">Home</a> -->
 						<a class="nav-item nav-link" href="<?php echo RUTA_URL . '/Estadisticas_C';?>">Estadisticas</a>
+						<a class="nav-item nav-link" href="<?php echo RUTA_URL . '/NuestroADN_C';?>">Nuestro ADN</a>
 						<a class="nav-item nav-link" href="<?php echo RUTA_URL . '/Participacion_C';?>">Participación social</a>
 						<a class="nav-item nav-link" href="<?php echo RUTA_URL . '/Donar_C';?>">Donar</a>
+						
+						<?php
+						if(!isset($_SESSION["ID_Afiliado"])){	?>
+							<div class="navbar-nav contenedor_21">
+								<a class="nav-item nav-link" href="<?php echo RUTA_URL . '/Login_C';?>">Inicie sesión</a>
+								<a class="nav-item nav-link" href="<?php echo RUTA_URL . '/Registro_C';?>">Registrase</a>
+							</div>
+							<?php
+						}	
+						else{	?>							
+							<div class="contenedor_4 contenedor_4a" id="Contenedor_4">
+								<a class="boton_1 a_1" href="<?php echo RUTA_URL . '/CerrarS_C';?>">Pablo</a>
+								<a class="boton_1 a_2" href="<?php echo RUTA_URL . '/CerrarS_C';?>">Cerrar sesión</a>
+							</div>		<?php
+						}	?>
 					</div>
 				</div>
-					<?php
-					if(isset($_SESSION["ID_Afiliado"])){	?>
-					 	<div class="contenedor_4 contenedor_4a" id="Contenedor_4">
-					 		<a class="a_1 boton_1" href="<?php echo RUTA_URL . '/CerrarS_C';?>">Pablo</a>
-					 		<a class="a_2 boton_1" href="<?php echo RUTA_URL . '/CerrarS_C';?>">Cerrar sesión</a>
-					 	</div>
-					 	<?php
-					}	?>
 			</nav>
 		</header>
 
