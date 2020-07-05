@@ -36,13 +36,13 @@
                             <td><?php echo $Fecha;?></td>
                             <td><?php echo $Hora;?></td>
                             <td><?php echo $Servicio;?></td>
-                            <td><?php echo $Descripcion;?></td>
+                            <td><textarea class="textarea_2" readonly><?php echo $Descripcion;?></textarea></td>
                         </tr>
                             <?php } ?>
                     </tbody>
                 </table>
                 <label class="boton_1">Imprimir reporte</label>
-                <a class="btn btn-primary boton_1" href="javascript: history.go(-2)">Regresar</a>
+                <a class="boton_1 a_2" href="javascript: history.go(-2)">Regresar</a>
              </div>
 		</div>  
 
