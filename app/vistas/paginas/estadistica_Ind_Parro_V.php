@@ -1,5 +1,5 @@
 
-<!-- Pagina cargada por el controlador Estadisticas_C/resultados -->
+<!-- Pagina cargada por el controlador Estadisticas_C/cargar dentro de estadisticas_V via Ajax-->
 <div class="container contenedor_16">
     <?php
     if(empty($Datos)){
@@ -17,9 +17,9 @@
             </thead>
             <tbody>
                 <?php
-                //Se reciben los datos desde Estadisticas_C
+                //Se reciben los datos desde Estadisticas_C/Cargar
                 $arr = $Datos->fetchAll(PDO::FETCH_ASSOC);
-                foreach($arr as $row) {
+                foreach($arr as $row){
                     $Sector = $row['sector'];
                     $Servicio = $row['servicio'];
                     $Estado = $row['estado'];
@@ -40,17 +40,18 @@
                             foreach($arr_2 as $Denuncias){  
                                 $TotalDenuncias = $Denuncias['Total']; 
                                 echo $TotalDenuncias;
-                            }  
+                            }                          
                             ?>  
+                            
                         </td>  
-                        <td><a href="Graficos_C/index/<?php echo $Estado.','.$Municipio.','.$Parroquia.','.$Servicio?>" target="_blank">Ver</a></td>
+                        <td><label class="label_4" onclick="AbrirPresentacion('<?php echo $Estado?>', '<?php echo $Municipio?>','<?php echo $Parroquia?>','<?php echo $FechaConsulta?>','<?php echo $Servicio?>')">Ver</label></td>
                     </tr>    
                     <?php 
                 }   
                 ?> 
             </tbody>
         </table>
-        <label class="boton_1">Imprimir reporte</label>
+        <label class="boton_1">Descargar</label>
         <?php
     }   ?>
 </div>  
