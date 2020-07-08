@@ -17,16 +17,6 @@
             $this->vista("paginas/estadistica_V");
         }
 
-        //Metodo llamado desde acuseDenuncia_V.php
-        // public function indicadores($CodigoDenuncia){
-        //     //Se CONSULTA los datos de la denuncia
-        //     $Denuncia= $this->ConsultaEstadistica_M->consultarDatosDenuncia($CodigoDenuncia);
-        //     // print_r($Denuncia);
-
-        //     $Datos = $Denuncia;
-        //     $this->vista("paginas/estadistica_Indicadores_V", $Datos);
-        // }
-
         //Metodo llamado desde Funciones_Ajax.js
         public function resultados($Estado, $Municipio, $Parroquia, $Frecuencia){
             $this->Estado = $Estado;
@@ -64,7 +54,6 @@
                     // echo "La sesion es: " . $_SESSION['Fecha'] ;
                 break;
             }
-            
             $this->Cargar($this->Estado, $this->Municipio, $this->Parroquia, $FechaConsulta);
         }   
 
