@@ -92,7 +92,7 @@
                     $ClaveBD = $arr['clave'];
                 }
               
-                echo "Clave Usuario descifrada= " .  password_verify($Clave, $ClaveBD) . "<br>";
+                // echo "Clave Usuario descifrada= " .  password_verify($Clave, $ClaveBD) . "<br>";
                 
         
                 //se descifra la contraseña con un algoritmo de desencriptado.
