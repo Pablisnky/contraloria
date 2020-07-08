@@ -6,5 +6,10 @@
         public function index(){
             $this->vista("paginas/inicio_V");
         }
+        
+        //Metodo cargado desde header_V
+        public function denuncias(){
+            $this->vista("paginas/denuncias_V");
+        }
     }
 ?>    
