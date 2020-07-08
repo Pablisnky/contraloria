@@ -1,12 +1,20 @@
 <div class="contenedor_13"> 
-   <footer>
-         <h4 class="h4_1">Ciudad transparente</h4>
-         <h5 class="h5_1">Desconocer una verdad, nos hace esclavo de una mentira.</h5>
-         <a href="Inicio_C/backup">BackUp BD</a>
+      <footer>
+            <h4 class="h4_1">Ciudad transparente</h4>
+            <h5 class="h5_1">Desconocer una verdad, nos hace esclavo de una mentira.</h5>
+            <a href="Inicio_C/backup">BackUp BD</a>
       </footer>
 </div> 
+
+<script type="text/javascript" src="<?php echo RUTA_URL . '/public/javascript/Funciones_varias.js'?>"></script> 
+<script type="text/javascript" src="<?php echo RUTA_URL . '/public/javascript/Municipios.js'?>"></script> 
+<script type="text/javascript" src="<?php echo RUTA_URL . '/public/javascript/parroquias.js'?>"></script> 
+<script type="text/javascript" src="<?php echo RUTA_URL . '/public/javascript/sectores.js'?>"></script> 
+<script type="text/javascript" src="<?php echo RUTA_URL . '/public/javascript/Funciones_Ajax.js'?>"></script> 
+
 </body>
 </html>
+
 
 <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
