@@ -9,7 +9,7 @@
             $RecibeDatos_array = explode(",", $RecibeDatos);    
             // print_r($RecibeDatos_array); 
             // echo "<br>";
-            switch($RecibeDatos_array[5]){
+            switch($RecibeDatos_array[6]){
                 case "aguapotable": 
                     //$RecibeDatos se vuelve a convertir en un string
                     $RecibeDatos_string = implode(",", $RecibeDatos_array);
