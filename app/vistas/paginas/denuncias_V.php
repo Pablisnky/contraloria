@@ -11,7 +11,8 @@
                         <li class="li_1">Separe el  aspecto ideológico-partidista  de la  práctica  de  la  contraloría  social  y  de  la  evaluación  de  la  gestión  pública.</li>
                         <li class="li_1">La contraloría social no debe constituir un “mecanismo para el pase de factura personal".</li>
                         <li class="li_1"> El control social es un mecanismo de acción en la vigilancia, supervisión, seguimiento y control de los asuntos públicos.</li>
-                        <li class="li_1">Solo puede realizar diez denuncias en el mes.</li>
+                        <li class="li_1">Solo puede realizar diez denuncias en el mes, esta limitante es temporal mientras estamos en versión Beta.</li>
+                        <li class="li_1">El municipio San Felipe del estado Yaracuy es el unico disponible de la plataforma, si deseas que tu municipio este disponible lee los requerimientos en la sección <a href="<?php echo RUTA_URL . '/Participacion_C';?>">FAQ</a>.</li>
                     </ul>     
                 </div>   
                 <div class="row">
