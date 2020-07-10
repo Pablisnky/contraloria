@@ -9,16 +9,16 @@
             <h2 class="h1_3">Indique el fallo en el servicio</h2>
             <form action="<?php echo RUTA_URL?>/AcuseDenuncia_C" method="post" name="itemsFallos">
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="falloAgua" id="400" value="400" onclick="DesactivarTextarea()">
-                    <label class="label_1" for="400" onclick="DesactivarTextarea()">Existe un bote de agua servida</label>
+                    <input class="form-check-input" type="radio" name="falloAgua" id="200" value="200" onclick="DesactivarTextarea()">
+                    <label class="label_1" for="200" onclick="DesactivarTextarea()">Existe un bote de agua servida</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="falloAgua" id="500" value="500" onclick="DesactivarTextarea()">
-                    <label class="label_1" for="500" onclick="DesactivarTextarea()">Tapa de boca de visita dañada o inexistente</label>
+                    <input class="form-check-input" type="radio" name="falloAgua" id="201" value="201" onclick="DesactivarTextarea()">
+                    <label class="label_1" for="201" onclick="DesactivarTextarea()">Tapa de boca de visita dañada o inexistente</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="falloAgua" id="600" value="600" onclick="DesactivarTextarea()">
-                    <label class="label_1" for="600" onclick="DesactivarTextarea()" >Rejilla de alcantarilla dañada o inexistente</300>
+                    <input class="form-check-input" type="radio" name="falloAgua" id="202" value="202" onclick="DesactivarTextarea()">
+                    <label class="label_1" for="202" onclick="DesactivarTextarea()" >Rejilla de alcantarilla dañada o inexistente</300>
                 </div>
                 <hr>
                 <div class="form-check">
