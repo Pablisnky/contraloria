@@ -15,24 +15,50 @@
         // }
         
         //Consulta problemas denunciados segun periodo de tiempo, por defecto 7 dias
-        public function consultarIndicadoresParroquia($Estado, $Municipio, $Parroquia, $FechaConsulta){
-            $stmt = $this->dbh->prepare("SELECT * FROM ubicacion INNER JOIN fallos ON ubicacion.ID_Ubicacion=fallos.ID_Ubicacion WHERE estado = :Estado AND municipio = :Municipio AND parroquia = :Parroquia AND fechaDenuncia >= :FechaDenuncia GROUP BY servicio");
-            $stmt->bindValue(':Estado', $Estado, PDO::PARAM_STR);
-            $stmt->bindValue(':Municipio', $Municipio, PDO::PARAM_STR);
-            $stmt->bindValue(':Parroquia', $Parroquia, PDO::PARAM_STR);
-            $stmt->bindValue(':FechaDenuncia', $FechaConsulta, PDO::PARAM_STR);
-            $stmt->execute();
-            return $stmt;
-        } 
-
-        //Consulta solicitada desde estadistica_Ind_Parro_V
-        public function consultarCantidadDenuncias($Estado, $Municipio, $Parroquia, $Servicio, $FechaConsulta){
-            $stmt = $this->dbh->query("SELECT COUNT(fechaDenuncia) AS Total FROM ubicacion INNER JOIN fallos ON ubicacion.ID_Ubicacion=fallos.ID_Ubicacion WHERE estado = '$Estado' AND municipio = '$Municipio' AND parroquia = '$Parroquia' AND servicio = '$Servicio' AND fechaDenuncia >= '$FechaConsulta' GROUP BY servicio");      
-            if($stmt->execute()){
+        public function consultarIndicadoresParroquia($Estado, $Municipio, $Parroquia, $Zona, $FechaConsulta){            
+            if($Zona != 'Todos'){
+                $stmt = $this->dbh->prepare("SELECT * FROM ubicacion INNER JOIN fallos ON ubicacion.ID_Ubicacion=fallos.ID_Ubicacion WHERE estado = :Estado AND municipio = :Municipio AND parroquia = :Parroquia AND zona = :Zona AND fechaDenuncia >= :FechaDenuncia GROUP BY servicio");
+                $stmt->bindParam(':Estado', $Estado, PDO::PARAM_STR);
+                $stmt->bindParam(':Municipio', $Municipio, PDO::PARAM_STR);
+                $stmt->bindParam(':Parroquia', $Parroquia, PDO::PARAM_STR);
+                $stmt->bindParam(':Zona', $Zona, PDO::PARAM_STR);
+                $stmt->bindParam(':FechaDenuncia', $FechaConsulta, PDO::PARAM_STR);
+                $stmt->execute();
                 return $stmt;
             }
             else{
-                return false;
+                $Comodin = '%';
+                $stmt = $this->dbh->prepare("SELECT * FROM ubicacion INNER JOIN fallos ON ubicacion.ID_Ubicacion=fallos.ID_Ubicacion WHERE estado = :Estado AND municipio = :Municipio AND parroquia = :Parroquia AND zona LIKE :Zona AND fechaDenuncia >= :FechaDenuncia GROUP BY servicio");
+                $stmt->bindParam(':Estado', $Estado, PDO::PARAM_STR);
+                $stmt->bindParam(':Municipio', $Municipio, PDO::PARAM_STR);
+                $stmt->bindParam(':Parroquia', $Parroquia, PDO::PARAM_STR);
+                $stmt->bindParam(':Zona', $Comodin, PDO::PARAM_STR);
+                $stmt->bindParam(':FechaDenuncia', $FechaConsulta, PDO::PARAM_STR);
+                $stmt->execute();
+                return $stmt;
+            }
+        } 
+
+        //Consulta solicitada desde estadistica_Ind_Parro_V
+        public function consultarCantidadDenuncias($Estado, $Municipio, $Parroquia, $Zona, $Servicio,   $FechaConsulta){  
+            if($Zona != 'Todos'){
+                $stmt = $this->dbh->prepare("SELECT COUNT(fechaDenuncia) AS Total FROM ubicacion INNER JOIN fallos ON ubicacion.ID_Ubicacion=fallos.ID_Ubicacion WHERE estado = '$Estado' AND municipio = '$Municipio' AND parroquia = '$Parroquia' AND zona = '$Zona' AND servicio = '$Servicio' AND fechaDenuncia >= '$FechaConsulta' GROUP BY servicio");      
+                if($stmt->execute()){
+                    return $stmt;
+                }
+                else{
+                    return false;
+                }
+            }
+            else{
+                $stmt = $this->dbh->prepare("SELECT COUNT(fechaDenuncia) AS Total FROM ubicacion INNER JOIN fallos ON ubicacion.ID_Ubicacion=fallos.ID_Ubicacion WHERE estado = '$Estado' AND municipio = '$Municipio' AND parroquia = '$Parroquia' AND zona LIKE '%' AND servicio LIKE '%' AND fechaDenuncia >= '$FechaConsulta' GROUP BY servicio");      
+                if($stmt->execute()){
+                    return $stmt;
+                }
+                else{
+                    return false;
+                }
+
             }
         }
     }
