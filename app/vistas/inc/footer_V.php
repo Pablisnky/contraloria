@@ -1,8 +1,8 @@
 <div class="contenedor_13"> 
       <footer>
             <h4 class="h4_1">Ciudad transparente</h4>
-            <h5 class="h5_1">Desconocer una verdad, nos hace esclavo de una mentira.</h5>
-            <a href="Inicio_C/backup">BackUp BD</a>
+            <h5 class="h5_1">Si logramos ganar terreno en la transparencia del asunto publico, minimizariamos la corrupción y el fraude, dos fenomenos nocivos y toxicos que perjudican a los ciudadanos.</h5>
+            <!-- <a href="Inicio_C/backup">BackUp BD</a> -->
       </footer>
 </div> 
 
