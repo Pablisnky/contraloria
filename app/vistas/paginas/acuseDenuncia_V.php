@@ -18,7 +18,7 @@
                 <p>20 días es tiempo suficiente para que los responsables tomen acciones, pasado ese tiempo usted podra volver a manifestar su inconfomidad con el servicio si continua el fallo</p>
                                 
                 <a class="btn btn-primary boton_1" href="<?php echo RUTA_URL . '/CerrarS_C'?>">Cerrar sesión</a>
-                <a class="btn btn-primary boton_1" href="<?php echo RUTA_URL . '/Inicio_C';?>">Continuar denunciando</a>              
+                <a class="btn btn-primary boton_1" href="<?php echo RUTA_URL . '/Inicio_C/denuncias';?>">Continuar denunciando</a>              
             </div>    
         </div>  
             <?php
