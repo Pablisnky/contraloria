@@ -13,7 +13,7 @@
         <form action="<?php echo RUTA_URL?>/Ubicacion_C/recibeUbicacion" method="post">
             <div class="form-row">
                 <div class="col">
-                    <label for="inputState">Estado</label>
+                    <label for="">Estado</label>
                     <select class="form-control" name="estado" onchange="SeleccionarMunicipio(this.form)">
                         <option></option>
                         <option>Amazonas</option>
@@ -43,14 +43,20 @@
                     </select>
                 </div>
                 <div class="col">
-                    <label for="inputState">Municipio</label>
+                    <label for="">Municipio</label>
                     <select class="form-control" name="municipio" onchange="SeleccionarParroquia(this.form)">
                         <option></option>
                     </select>
                 </div>
                 <div class="col">
-                    <label for="inputState">Parroquia</label>
+                    <label for="">Parroquia</label>
                     <select class="form-control" name="parroquia" onchange="SeleccionarSector(this.form)">
+                        <option></option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label>Sector</label>
+                    <select class="form-control" name="sectores">
                         <option></option>
                     </select>
                 </div>
