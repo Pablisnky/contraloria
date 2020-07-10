@@ -33,30 +33,40 @@
                 }
             }   
         }
-        // document.getElementById("Resultado").innerHTML = " \Por Nombre: " + resultado;
     }
 
 // **********************************************************************************************
-// **********************************************************************************************
-
 // Hace parpadear el nombre del usuario en el header
-var nw = 0;
-function animacion(){  
-    var intervalo = setInterval(function(){
-        nw += 1;
-        document.getElementById('Contenedor_4').classList.toggle('fade');
-        if(nw == 6){
-            clearInterval(intervalo);
-        }
-    }, 400);
-}
+    var nw = 0;
+    function animacion(){  
+        var intervalo = setInterval(function(){
+            nw += 1;
+            document.getElementById('Contenedor_4').classList.toggle('fade');
+            if(nw == 6){
+                clearInterval(intervalo);
+            }
+        }, 400);
+    }
 
-// **********************************************************************************************
 // **********************************************************************************************
 //Llamada desde estadistica_V
-function mostrarFrecuencia(){
-    document.getElementById("Contenedor_7").style.display = "grid";
+    function mostrarFrecuencia(){
+        document.getElementById("Contenedor_7").style.display = "grid";
+    }
+
+// **********************************************************************************************
+//Llamada desde estadistica_Ind_Parro_V
+    function AbrirPresentacion(Estado,Municipio,Parroquia,Fecha,Servicio){        
+        window.open(`Graficos_C/index/${Estado},${Municipio},${Parroquia},${Servicio},${Fecha}`, "ventana1", "width=1300,height=650,scrollbars=YES");
 }
 
 // **********************************************************************************************
+//Llamada desde estadistica_Ind_Parro_V
+    function CerrarPresentacion(){
+        window.close();
+}
 // **********************************************************************************************
+//Llamada desde 
+    function encuesta(){      
+        window.open('../NuestroADN_C/encuesta', "ventana1", "width=1300,height=650,scrollbars=YES");
+    }
