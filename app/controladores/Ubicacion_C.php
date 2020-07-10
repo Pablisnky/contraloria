@@ -24,11 +24,12 @@
 
         public function recibeUbicacion(){            
             //Captura todos los campos del formulario, se recibe desde ubicacion_V.php
-            if($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["estado"]) && !empty($_POST["municipio"]) && !empty($_POST["parroquia"]) && !empty($_POST["direccion"]) && !empty($_POST["sector_servicio"])){//si son enviados por POST y sino estan vacios, entra aqui
+            if($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["estado"]) && !empty($_POST["municipio"]) && !empty($_POST["parroquia"]) && !empty($_POST["direccion"]) && !empty($_POST["sectores"]) && !empty($_POST["sector_servicio"])){//si son enviados por POST y sino estan vacios, entra aqui
                 $RecibeDatos = [
                     'Estado' => ucfirst($_POST["estado"]),
                     'Municipio' => $_POST["municipio"],
                     'Parroquia' => ucfirst($_POST["parroquia"]),
+                    'Sector' => mb_strtolower($_POST["sectores"]),
                     'Direccion' => mb_strtolower($_POST["direccion"]),
                     'Sector_Servicio' => mb_strtolower($_POST["sector_servicio"])
                 ];
