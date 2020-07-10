@@ -12,16 +12,16 @@
                     <label class="label_1" for="100" onclick="DesactivarTextarea()">El agua no le llega</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="falloAgua" id="200" value="200" onclick="DesactivarTextarea()">
-                    <label class="label_1" for="200" onclick="DesactivarTextarea()">Existe un bote de agua en la calle</label>
+                    <input class="form-check-input" type="radio" name="falloAgua" id="101" value="101" onclick="DesactivarTextarea()">
+                    <label class="label_1" for="101" onclick="DesactivarTextarea()">Existe un bote de agua en la calle</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="falloAgua" id="300" value="300" onclick="DesactivarTextarea()">
-                    <label class="label_1" for="300" onclick="DesactivarTextarea()" >Incumplimiento con avastecimiento por tanques cisternas</300>
+                    <input class="form-check-input" type="radio" name="falloAgua" id="102" value="102" onclick="DesactivarTextarea()">
+                    <label class="label_1" for="102" onclick="DesactivarTextarea()" >Incumplimiento con avastecimiento por tanques cisternas</300>
                 </div>
                 <hr>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="falloAgua" id="DescribeFallo"  value="2000" onclick="DesactivarTextarea()">
+                    <input class="form-check-input" type="radio" name="falloAgua" id="DescribeFallo"  value="1000" onclick="DesactivarTextarea()">
                     <label class="label_1" for="DescribeFallo" onclick="DesactivarTextarea()">Describa el problema sino esta contemplado en esta lista.</300>
                 </div>                
                 <div class="textarea_1" id="Textarea_1">
