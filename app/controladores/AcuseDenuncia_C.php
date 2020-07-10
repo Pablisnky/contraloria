@@ -8,7 +8,7 @@
             $this->ConsultaAcuse_M = $this->modelo("AcuseDenuncia_M");           
         }
 
-        //Siempre cargara este metodo por defecto, solo sino se solicita otra metodo, es llamado desde detalles_V.php
+        //Siempre cargara este metodo por defecto, solo sino se solicita otra metodo, es llamado desde fallos_xxxxxxxxxx_V.php
         public function index(){            
             //Captura todos los campos del formulario, se recibe desde ubicacion_V.php
             if($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["falloAgua"])){//si son enviados por POST y sino estan vacios, entra aqui
@@ -24,7 +24,7 @@
                 exit();
             }
 
-            // print_r($RecibeVarios);//Los string los convierte a minusculas y elimina los espacios, esto es un problema por ejemplo para los municipios como "San Felipe"
+            // print_r($RecibeVarios);
             //  echo "<br>";
             //Se convierte el array en un string con sus valores separado por comas
             $RecibeVarios = implode(",", $RecibeVarios);
@@ -37,11 +37,12 @@
             $Estado = $RecibeVarios[1];
             $Municipio = $RecibeVarios[2];
             $Parroquia = $RecibeVarios[3];
+            $Zona = $RecibeVarios[4];
             
             $ID_Afiliado = $_SESSION["ID_Afiliado"];
            
-            //Se CONSULTA que el usuario no haya realizado la misma denuncia en la misma parroquia un lapso de 20 días
-            $CodigoDenuncia = $this->ConsultaAcuse_M->consultarCodigoDenuncia($ID_Afiliado, $CodigoFallo, $Estado, $Municipio,$Parroquia);
+            //Se CONSULTA que el usuario no haya realizado la misma denuncia en el mismo sector en un lapso de 20 días
+            $CodigoDenuncia = $this->ConsultaAcuse_M->consultarCodigoDenuncia($ID_Afiliado, $CodigoFallo, $Estado, $Municipio, $Parroquia, $Zona);
             //  echo "La cantidad de filas es: " . $CodigoDenuncia . "<br>";
             //  print_r($CodigoDenuncia);
 
@@ -61,16 +62,22 @@
                     $ID_Ubicacion = $usuario['ID_Ubicacion'];
                     //  echo "ID_Ubicacion: " . $ID_Ubicacion  . "<br>"; 
                 } 
+                
+                //Se establece el horario para Venezuela
+                date_default_timezone_set('America/Caracas');
 
                 //Se añaden 20 días a la fecha de la denuncia
                 $fecha = date('Y-m-d');
                 // echo $fecha . "<br>";
                 $FechaCaducidad = strtotime ('+20 day' , strtotime($fecha)) ;
                 $FechaCaducidad = date ('Y-m-j' , $FechaCaducidad);
-                //   echo $FechaCaducidad;
-           
-                //Se INSERTAN la descripcion de la denuncia sector publico, servicio, ubicacion, codigo de denuncia y usuario en la BD
-                $this->ConsultaAcuse_M->insertarDescripcionDenuncia($this->Aleatorio, $ID_Afiliado, $ID_Ubicacion, $RecibeVarios, $FechaCaducidad);
+                //echo $FechaCaducidad;
+                
+                //Se consulta la hora
+                $Hora = date('g:H a');
+                //Se INSERTAN la descripcion de la denuncia sector, servicio, ubicacion, codigo de denuncia y usuario en la BD
+
+                $this->ConsultaAcuse_M->insertarDescripcionDenuncia($this->Aleatorio, $ID_Afiliado, $ID_Ubicacion, $RecibeVarios, $FechaCaducidad, $Hora);
                 
                 $this->vista("paginas/acuseDenuncia_V");
             }
