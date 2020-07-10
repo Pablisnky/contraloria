@@ -1,7 +1,4 @@
-<?php
-	// Se carga el header 
-	require(RUTA_APP . "/vistas/inc/header_V.php");
-?>
+<?php require(RUTA_APP . "/vistas/inc/header_V.php"); ?>
 
 	<div class="container contenedor_1">
 		<div class="contenedor_15">
@@ -22,14 +19,14 @@
 						<input type="text" name="datosVarios" value="<?php echo $Datos;?>" hidden>
 						<input class="btn btn-primary boton_1" type="submit" value="Entrar"><!-- validar_02() se encuentra en return validar_02()validarFormularios.js -->
 						<hr>
-						<p class="p_1">¿Olvidaste tu contraseña?
-						<label class="label_4" onclick="NotificarContrasena()">Recuperala</label></p>
+						<p class="p_4">¿Olvidaste tu contraseña?
+						<label class="label_1 label_4" onclick="NotificarContrasena()">Recuperala</label></p>
 					</form>
+					<div class="">	
+						<p class="p_4">¿No tienes cuenta?
+						<a href="<?php echo RUTA_URL . '/Registro_C';?>"><label class="label_1 label_4">Registrate</label></a><p>
+					</div>
 				</div>
-			</div>
-			<div class="">	
-				<p class="p_1">¿No tienes cuenta?
-				<a class="label_4" href="<?php echo RUTA_URL . '/Registro_C';?>">Registrate</a><p>
 			</div>
 		</div>
 		<div class="contenedor_3" id="Contenedor_16" onclick="OcultarDiv()">
