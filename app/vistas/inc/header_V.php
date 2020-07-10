@@ -29,7 +29,14 @@
 						<div>
 							<ul class="navbar-nav">
 								<li class="nav-item">
-									<a class="nav-item nav-link " href="<?php echo RUTA_URL . '/Inicio_C/denuncias';?>">Denunciar</a>
+									<a class="nav-item nav-link " href="<?php echo RUTA_URL . '/Inicio_C';?>">Home</a>
+								</li> 
+								<li class="nav-item menuLi_1">
+									<a class="nav-item nav-link" href="#">Participar</a>
+									<ul class="navbar-nav menuContenedor_2">
+										<li class="nav-item"><a class="nav-item nav-link " href="<?php echo RUTA_URL . '/Inicio_C/denuncias';?>">Denunciar</a></li> 
+										<li class="nav-item"><a class="nav-item nav-link "  href="#">Agregar</a></li>
+									</ul>
 								</li> 
 								<li class="nav-item">
 									<a class="nav-item nav-link" href="<?php echo RUTA_URL . '/Estadisticas_C';?>">Estadisticas</a>
