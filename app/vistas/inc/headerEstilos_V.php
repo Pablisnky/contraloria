@@ -24,6 +24,6 @@
 				<a class="navbar-brand" href="<?php echo RUTA_URL . '/Inicio_C';?>">
 					<img src="<?php echo RUTA_URL;?>/public/images/logo.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy"> Ciudad Transparente
 				</a>
-			</nav>
+			</nav> 
         </header>
     </body>
