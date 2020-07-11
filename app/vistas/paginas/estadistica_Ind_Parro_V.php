@@ -44,7 +44,7 @@
                                 }                          
                                 ?>                                  
                             </td>  
-                            <td><label class="label_4" onclick="AbrirPresentacion('<?php echo $Estado?>', '<?php echo $Municipio?>','<?php echo $Parroquia?>','<?php echo $FechaConsulta?>','<?php echo $Servicio?>')">Ver</label></td>
+                            <td><label class="label_7 label_4" onclick="AbrirPresentacion('<?php echo $Estado?>', '<?php echo $Municipio?>','<?php echo $Parroquia?>','<?php echo $Zona?>','<?php echo $FechaConsulta?>','<?php echo $Servicio?>')">Ver</label></td>
                         </tr>    
                         <?php 
                     }  
