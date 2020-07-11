@@ -4,7 +4,7 @@
             <div class="contenedor_8">
                 <div class="row contenedor_7">
                     <div class="col-sm-12">
-                        <p class="p_1">La participación ciudadana en el control y evaluación sobre la gestión publica, es necesaria para prevenir la corrupcion, el fraude y la ineficiencia, a la vez que ayuda a los administradores y dirigentes gubernamentales a conocer lo que sucede en sus comunidades. Conectar Ambas premisas, realizar metricas con machine learning y sostener la trazabilidad de los problemas en tiempo real para predecir malas practicas en el manejo del asunto público, es el objetivo de este servicio comunitario.</p>
+                        <p class="p_1">La participación ciudadana en el control y evaluación sobre la gestión publica, es necesaria para prevenir la corrupcion, el fraude y la ineficiencia, a la vez que ayuda a los administradores y dirigentes gubernamentales a conocer lo que sucede en sus comunidades. Conectar ambas premisas, realizar metricas con machine learning y sostener la trazabilidad de los problemas en tiempo real para predecir malas practicas en el manejo del asunto público, es el objetivo de este servicio comunitario.</p>
                     </div>
                 </div>
                 <div class="contenedor_26">
@@ -21,7 +21,7 @@
                     </div>
                 </div>
                 <div>
-                    <a class="a_3" href="<?php echo RUTA_URL . '/Inicio_C/denuncias';?>">Selecione un servicio público para realizar su denuncia</a>
+                    <a class="a_3" href="<?php echo RUTA_URL . '/Inicio_C/denuncias';?>">Denunciar</a>
                 </div> 
             </div>
             <div>
