@@ -1,8 +1,12 @@
-<?php include(RUTA_APP . "/vistas/inc/headerEstilos_V.php"); ?>
+<?php include(RUTA_APP . "/vistas/inc/headerEstilos_V.php");
 
+foreach($Datos as $row) {
+    $Servicio = $row['servicio'];
+}
+?>
 		<div class="container contenedor_1">
             <div class="contenedor_15">
-                <h1 class="h1_2">Denuncias realizadas por problemas con <?php echo "Agua potable en los ultimos siete día"?></h1>
+                <h1 class="h1_2">Denuncias realizadas por problemas con <?php echo $Servicio = $row['servicio'];?> en los ultimos siete día</h1>
                 <table class="table">
                     <thead>
                         <tr>
@@ -18,36 +22,38 @@
                         </tr>
                     </thead>
                     <tbody>
-                            <?php
-                            //Se reciben los datos desde Graficos_C
-                            $arr = $Datos->fetchAll(PDO::FETCH_ASSOC);
-                            foreach($arr as $row) {
-                                $Estado = $row['estado'];
-                                $Municipio = $row['municipio'];
-                                $Parroquia = $row['parroquia'];
-                                $Zona = $row['zona'];
-                                $Direccion = $row['direccion'];
-                                $Fecha = $row['fechaDenuncia'];
-                                $Hora = $row['horaDenuncia'];
-                                $Servicio = $row['servicio'];
-                                $Descripcion = $row['descripcionFallo'];
-                                ?>
-                        <tr>
-                            <td><?php echo $Estado;?></td>
-                            <td><?php echo $Municipio;?></td>
-                            <td><?php echo $Parroquia;?></td>
-                            <td><?php echo $Zona;?></td>
-                            <td><?php echo $Direccion;?></td>
-                            <td><?php echo $Fecha;?></td>
-                            <td><?php echo $Hora;?></td>
-                            <td><?php echo $Servicio;?></td>
-                            <td><textarea class="textarea_2" readonly><?php echo $Descripcion;?></textarea></td>
-                        </tr>
-                            <?php } ?>
+                        <?php
+                        //Se reciben los datos desde Graficos_C
+                        //$arr = $Datos->fetchAll(PDO::FETCH_ASSOC);
+                        foreach($Datos as $row) {
+                            $Estado = $row['estado'];
+                            $Municipio = $row['municipio'];
+                            $Parroquia = $row['parroquia'];
+                            $Zona = $row['zona'];
+                            $Direccion = $row['direccion'];
+                            $Fecha = $row['fechaDenuncia'];
+                            $Hora = $row['horaDenuncia'];
+                            $Servicio = $row['servicio'];
+                            $Descripcion = $row['descripcionFallo'];
+                            ?>
+                            <tr>
+                                <td><?php echo $Estado;?></td>
+                                <td><?php echo $Municipio;?></td>
+                                <td><?php echo $Parroquia;?></td>
+                                <td><?php echo $Zona;?></td>
+                                <td><?php echo $Direccion;?></td>
+                                <td><?php echo $Fecha;?></td>
+                                <td><?php echo $Hora;?></td>
+                                <td><?php echo $Servicio;?></td>
+                                <td><textarea class="textarea_2" readonly><?php echo $Descripcion;?></textarea></td>
+                            </tr>
+                            <?php 
+                        } 
+                        ?>
                     </tbody>
                 </table>
                 <div>
-                    <label class="btn btn-primary boton_1" onclick="CerrarPresentacion()">Cerrar</label>
+                    <label class="btn btn-primary boton_1" onclick="CerrarVentana()">Cerrar</label>
                     <label class="btn btn-primary boton_1 ">Descargar</label>
                     <label class="btn btn-primary boton_1"><a class="a_6" href="<?php echo RUTA_URL . '/Infografia_C/index/Comunidad,AguaServida';?>">Infografia</a></label>
                     <label class="btn btn-primary boton_1"><a class="a_6" href="<?php echo RUTA_URL . '/Infografia_C/index/Comunidad,AguaServida';?>">Historial</a></label>
