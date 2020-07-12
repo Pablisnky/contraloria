@@ -9,26 +9,28 @@
                     <label class="label_3">Programador BackEnd de aplicaciones web</label>
                     <label class="label_3">Desarrollador de software</label>
                     <label class="label_3">T.S.U. Mecánica térmica</label> 
+                    <label class="label_3">yaracuyano</label> 
                 </div>            
-                <p class="p_3">Como te dije antes, no esta en mis manos dar la solución a los problemas reportados en esta plataforma, es asunto de los que gobiernan, sin embargo, me veo tentado a enfrentar estos fallos y esclarecer porque suceden sin césar; por eso al final de esta página tengo una encuesta de una unica pregunta, a ver si hago una postulación como alcalde del Municipio San Felipe del estado Yaracuy.</p>
+                <p class="p_3">Hola, soy el desarrollador tecnologico y director de esta aplicación, no esta en mis manos dar la solución a los problemas reportados en ella, eso es asunto de los que gobiernan, sin embargo, mi tiempo de actuar a llegado, por lo que quiero presentarte mi enfoque para que surjamos e invitarte al final de esta página a responder una encuesta de una unica pregunta, a ver si hago una postulación como alcalde del Municipio San Felipe del estado Yaracuy.</p>
 
-                <h2 class="h2_3 h2_2">Seis datos sobre mí</h2>
+                <h2 class="h2_3 h2_2">Mi enfoque en miras de la Alcaldía .</h2>
                 <ol>
-                    <li class="li_2">Actualmente trabajo como desarrollador de software y quiero aportar mis conocimiento en tecnología para impactar positivamente a nuestro municipio, al estado y al país. Un ejemplo de esto, es esta plataforma de denuncias, la cual desarrollé y formo parte activa del equipo de trabajo de este proyecto único en el país.</li>
+                    <li class="li_2">Actualmente trabajo como desarrollador de software y quiero aportar mis conocimiento en tecnología para impactar positivamente a nuestro municipio, al estado y al país. Un ejemplo real de esto, es la actual plataforma de denuncias que cohexiste con el proyecto Ciudad Transparentte, la cual desarrollé y formo parte activa del equipo de desarrollo de este proyecto único en el país y nacido en San Felipes estado Yaracuy.</li>
 
-                    <li class="li_2">Otro proyecto social inedito en nuestro país que tengo listo y que mejorará significativamente el servicio de atención en salud publica y privada, es una plataforma digital que administra historias médicas, interconecta centros de salud y permite el agendamiento de citas por medio de la nube, esta plataforma para entrar en producción solo faltan los permisos necesarios para que los centros de salud que se encuentren dentro del municipio tanto publicos como privados puedan correrla, en el futuro pudiesemos extenderla al pais entero.</li>
+                    <li class="li_2">Otro proyecto social inedito en nuestro país y que mejorará significativamente el servicio de atención en salud publica y privada, es una plataforma digital que administra historias médicas, interconecta centros de salud y permite el agendamiento de citas por medio de la nube, esta plataforma para entrar en producción solo faltan los permisos necesarios para que los centros de salud que se encuentren dentro del municipio tanto publicos como privados puedan correrla, en el futuro pudiesemos extenderla al pais entero.</li>
 
-                    <li class="li_2">Para gestionar nuestra alcaldía estoy diseñando la arquitectura de un sistema digital para administrar los impuestos, el catastro, las tierras, el parque automotar, la gestión de la basura, la distribución del agua, la gestión del Clap, el presupuesto del municipio entre otras responsabilidades, la cual sera totalmente accesible a la ciudadania para trabaja con datos abiertos.</li>
+                    <li class="li_2">Para gestionar nuestra alcaldía estoy diseñando la arquitectura de un sistema digital totalmente con datos abiertos y accesibles por los ciudadanos. En el se podra administrar los impuestos, el catastro, las tierras, el parque automotar, la gestión de la basura, la distribución del agua, la gestión del Clap, el presupuesto del municipio, el plan urbanistico, los temas culturales, deportivos y de formación academica, la seguridad ciudadana y la atención médica, seriamos la primera y unica alcaldía del país que gestiona su desempeño en tiempo real de cara a los ciudadanos.</li>
 
-                    <li class="li_2">Por otro lado tengo estudios universitarios en Mecánica Térmica, por lo que domino muy bien temas de gestión y administración de recursos energeticos y mantenimiento general de infraestructura física, maquinaria y equipos.</li>
+                    <li class="li_2">Y asi como mi propuesta lucha verdaderamente contra la corrupción y el fraude, tambien lo hace contra la ignorancia, la dependencia y la esclavitud, desde la nueva alcaldía no se buscará crear seguidores, se buscará crear lideres, por lo que necesariamente se tiene que crear una unidad de estudio y formación academica, para especializar el recurso humano y apoyar al municipio en temas agricolas, salud, cultura, deporte, urbanismo entre otras areas del conocimiento.</li>
                     
-                    <li class="li_2">Con respecto a la actual crisis, debemos sacar provecho que el planeta esta construido bajo software, de modo  que podemos obtener recursos adicionales exportando productos y servicios digitales creados en la alcaldía por medio de una división de diseño de software con talento sanfelipeño principalmente, ofrecerlos al gobierno central o realizando convenios con otros paises a cambio de recursos economicos o especies.</li>
+                    <li class="li_2">Con respecto a la actual crisis económica, debemos sacar provecho que el planeta esta construido bajo software, de modo  que podemos obtener recursos adicionales exportando productos y servicios digitales creados en la alcaldía por medio de una división de desarrollo de software dirigida personalmente por mí y formada con talento sanfelipeño principalmente, ofrecerlos al gobierno central o realizar convenios con otros paises a cambio de recursos economicos o especies.</li>
 
                     <li class="li_2">Y por ultimo soy atleta aficionado, asi que todos los días podremos salir juntos a corre 5K, 10K ó 30K por las avenidas de nuestro municipio.</li>
                 </ol>
             </div>
             <div class="contenedor_22">
-                <p class="p_2">¿Tendrias intención de voto a mi favor, si me postulo a alcalde del municipio San Felipe?</p>            
+                <p class="p_2">¿Tendrias intención de voto a mi favor, si me postulo a alcalde del municipio San Felipe?</p>    
+                <span class="span_2">Encuesta abierta hasta 28-02-2021</span>        
                 <div class="contenedor_23">        
                     <div class="contenedor_24">
                         <label class="btn btn-primary boton_1 boton_2" onclick="encuesta()">Si</label>
