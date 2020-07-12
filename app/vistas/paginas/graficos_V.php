@@ -1,12 +1,15 @@
 <?php include(RUTA_APP . "/vistas/inc/headerEstilos_V.php");
 
+// sesion creada en Estadisticas_C
+$Frecuencia = $_SESSION['Frecuencia'];
+
 foreach($Datos as $row) {
     $Servicio = $row['servicio'];
 }
 ?>
 		<div class="container contenedor_1">
             <div class="contenedor_15">
-                <h1 class="h1_2">Denuncias realizadas por problemas con <?php echo $Servicio = $row['servicio'];?> en los ultimos siete día</h1>
+                <h1 class="h1_2">Denuncias realizadas por problemas con <?php echo $Servicio;?> en los ultimos <?php echo $Frecuencia;?> días</h1>
                 <table class="table">
                     <thead>
                         <tr>
