@@ -19,7 +19,7 @@ function SeleccionarSector(form){
                 Sector[1] = new Option("Marín");
                 Sector[2] = new Option("Albarico");
                 Sector[3] = new Option("La Baldosera");
-                Sector[4] = new Option("Todos");
+                // Sector[4] = new Option("Todos");
             }
             if(Parroquia[2].selected == true){//San Felipe
                 Sector[0] = new Option("");   
@@ -27,12 +27,12 @@ function SeleccionarSector(form){
                 Sector[2] = new Option("Caja de agua");
                 Sector[3] = new Option("La asención");
                 Sector[4] = new Option("Bella vista");  
-                Sector[5] = new Option("Todos");
+                // Sector[5] = new Option("Todos");
             }
             if(Parroquia[3].selected == true){//San javier
                 Sector[0] = new Option("");   
                 Sector[1] = new Option("San Javier"); 
-                Sector[3] = new Option("Todos");
+                // Sector[3] = new Option("Todos");
             }
         }
     }
