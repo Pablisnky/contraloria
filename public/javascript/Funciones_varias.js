@@ -56,17 +56,24 @@
 
 // **********************************************************************************************
 //Llamada desde estadistica_Ind_Parro_V
-    function AbrirPresentacion(Estado,Municipio,Parroquia,Fecha,Servicio){        
-        window.open(`Graficos_C/index/${Estado},${Municipio},${Parroquia},${Servicio},${Fecha}`, "ventana1", "width=1300,height=650,scrollbars=YES");
+    function AbrirPresentacion(Estado,Municipio,Parroquia,Zona,Fecha,Servicio){        
+        window.open(`Graficos_C/index/${Estado},${Municipio},${Parroquia},${Zona},${Fecha},${Servicio}`, "ventana1", "width=1300,height=650,scrollbars=YES");
 }
 
 // **********************************************************************************************
 //Llamada desde estadistica_Ind_Parro_V
     function CerrarPresentacion(){
+        // Se recarga la ventana padre
+        window.opener.location.reload();
+        window.close();
+}
+// **********************************************************************************************
+//Llamada desde estadistica_Ind_Parro_V
+    function CerrarVentana(){
         window.close();
 }
 // **********************************************************************************************
 //Llamada desde 
-    function encuesta(){      
-        window.open('../NuestroADN_C/encuesta', "ventana1", "width=1300,height=650,scrollbars=YES");
+    function encuesta(){       
+        window.open('../NuestroADN_C/encuesta/', "ventana1", "width=1300,height=650,scrollbars=YES");
     }
