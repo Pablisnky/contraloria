@@ -36,21 +36,21 @@
                     $FechaConsulta = strtotime ('-7 day' , strtotime($fecha)) ;
                     $FechaConsulta = date ('Y-m-j', $FechaConsulta);
                     $_SESSION['Fecha'] =  $FechaConsulta;
-                    // echo 'La sesion es: ' . $_SESSION['Fecha'] ;
+                    $_SESSION['Frecuencia'] = 7;
                 break;
                 case 'Quincenal': 
                     $fecha = date('Y-m-d');
                     $FechaConsulta = strtotime ('-15 day' , strtotime($fecha)) ;
                     $FechaConsulta = date ('Y-m-j', $FechaConsulta);
                     $_SESSION['Fecha'] =  $FechaConsulta;
-                    // echo 'La sesion es: ' . $_SESSION['Fecha'] ;
+                    $_SESSION['Frecuencia'] = 15;
                 break;
                 case 'Mensual': 
                     $fecha = date('Y-m-d');
                     $FechaConsulta = strtotime ('-30 day' , strtotime($fecha)) ;
                     $FechaConsulta = date ('Y-m-j', $FechaConsulta);
                     $_SESSION['Fecha'] =  $FechaConsulta;
-                    // echo 'La sesion es: ' . $_SESSION['Fecha'] ;
+                    $_SESSION['Frecuencia'] = 30;
                 break;
             }
                 
