@@ -26,6 +26,7 @@
                         $Municipio = $row['municipio'];
                         $Parroquia = $row['parroquia'];
                         $Zona = $row['zona'];
+                        // sesion creada en Estadisticas_C
                         $FechaConsulta = $_SESSION['Fecha'];
                         ?>
                         <tr>
