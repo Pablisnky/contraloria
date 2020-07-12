@@ -35,6 +35,7 @@
 									<a class="nav-item nav-link" href="#">Participar</a>
 									<ul class="navbar-nav menuContenedor_2">
 										<li class="nav-item"><a class="nav-item nav-link " href="<?php echo RUTA_URL . '/Inicio_C/denuncias';?>">Denunciar</a></li> 
+										<li class="nav-item"><a class="nav-item nav-link "  href="#">Chat</a></li>
 										<li class="nav-item"><a class="nav-item nav-link "  href="#">Agregar</a></li>
 									</ul>
 								</li> 
