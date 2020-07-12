@@ -47,8 +47,11 @@ body, html{
 }
 .a_3:hover{/*inicio_V*/
 	cursor: pointer;
-	background-color: rgba(6, 6, 29, 0.9) !important;
-	color: white;
+	background-color:rgba(0, 0, 255, 0.1) !important ;
+	color:rgba(6, 6, 29, 1)!important;
+	border-color: rgba(6, 6, 29, 1)!important;
+	border-width: 1px;
+	border-style: solid;
 } 
 .a_3a{/*denuncias_V*/
 	position: relative;
@@ -75,7 +78,11 @@ body, html{
 }
 .boton_1:hover{
 	cursor: pointer;
-	background-color: rgba(6, 6, 29, 0.9) !important;
+	background-color:rgba(0, 0, 255, 0.1) !important ;
+	color:rgba(6, 6, 29, 1)!important  ;
+	border-color: rgba(6, 6, 29, 1)!important;
+	border-width: 1px;
+	border-style: solid;
 }
 .boton_2{/*pablins_ky*/
 	width: 100px;
@@ -161,7 +168,7 @@ body, html{
 	margin-top: 10%;
 	margin-bottom: 5%; 
 }
-.contenedor_15{/*estadistica_V*/
+.contenedor_15{/*estadistica - encuesta - pablins-ky*/
 	min-height: 70vh;
 }
 .contenedor_16{/*estadistica_V*/
@@ -174,7 +181,7 @@ body, html{
 .contenedor_18{/*nuestroADN_C*/
 	margin: 5%;
 }
-.contenedor_19{/*quienesSomos_V*/
+.contenedor_19{/*quienesSomos - pablins_ky*/
 	background-color: rgb(238, 238, 247);
 	width: 30%;
 	float: right;
@@ -191,8 +198,10 @@ body, html{
 	border-left-style: solid;
 }
 .contenedor_22{/*pablins_ky*/
+	background-color: rgb(238, 238, 247);
 	width: 90%;
-	margin: auto;
+	margin: 5% auto;
+	border-radius: 15px;
 }
 .contenedor_23{/*pablins_ky*/
 	display: flex;	
@@ -215,6 +224,9 @@ body, html{
 }
 .contenedor_27{/*inicio*/
 	width: 100%;
+}
+.contenedor_28{/*encuesta*/
+	padding-top: 4%;
 }
 .disable:hover{
 	background-color: inherit !important;
@@ -246,7 +258,7 @@ body, html{
 	/* padding-top: 2%; */
 	text-align: center;
 }
-.h2_2{/*participacion_V*/
+.h2_2{/*participacion*/
 	text-align: left;
 	margin-top: 1%;
 	width: 100%;
@@ -294,9 +306,15 @@ body, html{
 	border-top-right-radius: 15px;
 }
 .input_1{/*pablins_ky*/
+	background-color:rgb(238, 238, 247) ;
+	font-size: 1.5em;
 	text-align: center;
 	width: 100%;
 	border: none;
+}
+.input_2{/*encuesta*/
+	text-align: center;
+	font-size: 1.1em;
 }
 .label_1{/*inicio_V - estadistica_Ind_Parro_V - estadistica_V*/
 	cursor: pointer;
@@ -312,7 +330,6 @@ body, html{
 	color:#040652 ;
 	width: 100%;
 	font-size: 1.5em;
-	font-weight: bold;
 	font-family: 'Raleway', sans-serif;
 }
 .label_3{/*quienesSomos - inicio*/
@@ -341,7 +358,20 @@ body, html{
 	font-weight: bold;
 	display: block;
 	text-align: center;
-
+}
+.label_7{/*estadisticas_Ind_Parro*/
+	padding: 2% 4%;
+	border-color: white!important;
+	border-width: 1px;
+	border-style: solid;
+}
+.label_7:hover{/*estadisticas_Ind_Parro*/
+	background-color:rgba(0, 0, 255, 0.1) ;
+	border-radius: 5px;
+	border-color: rgba(6, 6, 29, 1)!important;
+	border-width: 1px;
+	border-style: solid;
+	padding: 2% 4%;
 }
 .legend_1{
 	margin-left: 5%;
@@ -413,6 +443,13 @@ body, html{
 }
 .simplescrollup__button--hide {
     transform: translateX(100px);
+}
+.span_2{/*pablins_Ky*/
+display: block;
+text-align: center;
+margin-top: -2%;
+margin-bottom: 3%;
+font-size: 0.9em;
 }
 .span_enlace{/*estadistica_Ind_Parr_V*/
 	cursor: pointer;
