@@ -6,14 +6,7 @@
         public function __construct(){ 
             parent::__construct();  
         }
-        
-        // public function consultarDatosDenuncia($CodigoDenuncia){
-        //     $this->db->Consulta("SELECT * FROM fallos INNER JOIN ubicacion ON fallos.aleatorio=ubicacion.aleatorio WHERE ubicacion.aleatorio = '$CodigoDenuncia'");
-        //     //registros() es un metodo de la clase Conexion_BD
-        //     $resultados =  $this->db->registros();
-        //     return $resultados;
-        // }
-        
+                
         //Consulta problemas denunciados segun periodo de tiempo, por defecto 7 dias
         public function consultarIndicadoresParroquia($Estado, $Municipio, $Parroquia, $Zona, $FechaConsulta){            
             if($Zona != 'Todos'){
@@ -39,7 +32,7 @@
             }
         } 
 
-        //Consulta solicitada desde estadistica_Ind_Parro_V
+        //Consulta el total de problemas en un servicio especifico, desde estadistica_Ind_Parro_V
         public function consultarCantidadDenuncias($Estado, $Municipio, $Parroquia, $Zona, $Servicio,   $FechaConsulta){  
             if($Zona != 'Todos'){
                 // echo $Zona . "<br>";
