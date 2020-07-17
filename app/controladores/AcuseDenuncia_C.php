@@ -75,9 +75,18 @@
                 
                 //Se consulta la hora
                 $Hora = date('g:H a');
-                //Se INSERTAN la descripcion de la denuncia sector, servicio, ubicacion, codigo de denuncia y usuario en la BD
+                
+                if($RecibeVarios[0] != 2000){
+                    //Se INSERTAN la descripcion de la denuncia  cuando el fallos es standar
+                    $this->ConsultaAcuse_M->insertarDescripcionDenuncia($this->Aleatorio, $ID_Afiliado, $ID_Ubicacion, $RecibeVarios, $FechaCaducidad, $Hora);
+                }
+                else{
+                    //Se INSERTAN la descripcion de la denuncia  cuando el fallos es standar
+                    $this->ConsultaAcuse_M->insertarDescripcionDenuncia($this->Aleatorio, $ID_Afiliado, $ID_Ubicacion, $RecibeVarios, $FechaCaducidad, $Hora);
 
-                $this->ConsultaAcuse_M->insertarDescripcionDenuncia($this->Aleatorio, $ID_Afiliado, $ID_Ubicacion, $RecibeVarios, $FechaCaducidad, $Hora);
+                    //Se INSERTAN la descripcion de la denuncia cuando el fallo no es standar
+                    $this->ConsultaAcuse_M->insertarDescripcionDenunciaPersonalizado($RecibeVarios);
+                }
                 
                 $this->vista("paginas/acuseDenuncia_V");
             }
