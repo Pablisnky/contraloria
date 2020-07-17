@@ -8,8 +8,6 @@
         }
 
         public function insertarUsuario($RecibeDatos){
-            //Se inserta a la BD por medio de sentencias preparadas
-            // $this->Conexion = new PDO("mysql:host=localhost; dbname=contralo_ria", 'root', '');
             
             $stmt = $this->dbh->prepare("INSERT INTO afiliado(nombre, cedula, telefono, correo, fecha_afiliacion) VALUES (:Nombre, :Cedula, :Telefono, :Correo, NOW())");
 
