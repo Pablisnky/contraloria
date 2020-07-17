@@ -21,12 +21,12 @@
             $FechaConsulta = $DatosAgrupados[4];
             $Servicio = $DatosAgrupados[5];
 
-            //Se CONSULTA las denuncias para el periodo seleccionado (semanal,quincenal,mensual)
+            //Se CONSULTA los detalles de denuncias para el periodo seleccionado de un servicio especifico (semanal,quincenal,mensual)
             $Indicadores_2 = $this->ConsultaGrafico_M->consultarDetallesIndicadores($Estado, $Municipio, $Parroquia, $Zona, $FechaConsulta, $Servicio);
 
             $Datos = $Indicadores_2;
-            
             $Datos = $Datos->fetchAll(PDO::FETCH_ASSOC);
+                       
             foreach($Datos as $row){
                 $Estado = $row['estado'];
                 $Municipio = $row['municipio'];
@@ -38,17 +38,6 @@
                 $Servicio = $row['servicio'];
                 $Descripcion = $row['descripcionFallo'];
             }
-
-            //Se establece el tiempo de la denuncia segun su fecha
-            // if($Fecha >= $FechaTope){
-            //     $Frecuencia = "siete";
-            // }
-            // else if(){
-            //     $Frecuencia = "quince";
-            // }
-            // else if(){
-            //     $Frecuencia = "treinta";
-            // }
 
             $this->vista("paginas/graficos_V", $Datos);
         }
