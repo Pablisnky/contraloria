@@ -240,10 +240,6 @@ body, html{
 	border-color: blueviolet;
 	margin-bottom: 3%;
 }
-.span_1{/*quienesSomos*/
-	font-family: 'Raleway', sans-serif;
-	font-weight: bold;
-}
 .h1_1{
 	text-align: center;
 }
@@ -444,12 +440,16 @@ body, html{
 .simplescrollup__button--hide {
     transform: translateX(100px);
 }
+.span_1{/*quienesSomos*/
+	font-family: 'Raleway', sans-serif;
+	font-weight: bold;
+}
 .span_2{/*pablins_Ky*/
-display: block;
-text-align: center;
-margin-top: -2%;
-margin-bottom: 3%;
-font-size: 0.9em;
+	display: block;
+	text-align: center;
+	margin-top: -2%;
+	margin-bottom: 3%;
+	font-size: 0.9em;
 }
 .span_enlace{/*estadistica_Ind_Parr_V*/
 	cursor: pointer;
