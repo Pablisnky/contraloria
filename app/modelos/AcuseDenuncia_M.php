@@ -62,7 +62,7 @@
         }
 
         public function insertarDescripcionDenuncia($Aleatorio, $ID_Afiliado, $ID_Ubicacion, $RecibeVarios, $FechaCaducidad, $Hora){      
-            $stmt = $this->dbh->prepare("INSERT INTO fallos(ID_Ubicacion, ID_Afiliado, aleatorio, sector, servicio, codigoFallo, descripcionFallo, abierto, fechaDenuncia, fechaCaducidad, horaDenuncia) VALUES (:ID_UBICACION, :ID_AFILIADO, :ALEATORIO, :SECTOR, :SERVICIO, :CODIGO_FALLO, :DESCRIPCION, :ABIERTO, NOW(), :FECHA_CADUCIDAD, :HORA)");
+            $stmt = $this->dbh->prepare("INSERT INTO fallos(ID_Ubicacion, ID_Afiliado, aleatorio, sector, servicio, codigoFallo, abierto, fechaDenuncia, fechaCaducidad, horaDenuncia) VALUES (:ID_UBICACION, :ID_AFILIADO, :ALEATORIO, :SECTOR, :SERVICIO, :CODIGO_FALLO, :ABIERTO, NOW(), :FECHA_CADUCIDAD, :HORA)");
 
             $stmt->bindParam(':ID_UBICACION', $id_ubicacion);
             $stmt->bindParam(':ID_AFILIADO', $id_afiliado);
@@ -70,7 +70,6 @@
             $stmt->bindParam(':SECTOR', $sector);
             $stmt->bindParam(':SERVICIO', $servicio);
             $stmt->bindParam(':CODIGO_FALLO', $codigo_fallo);
-            $stmt->bindParam(':DESCRIPCION', $descripcion);
             $stmt->bindParam(':ABIERTO', $abierto);
             $stmt->bindParam(':FECHA_CADUCIDAD', $fecha_caducidad);
             $stmt->bindParam(':HORA', $hora);
@@ -81,10 +80,29 @@
             $sector = $RecibeVarios[6];
             $servicio = $RecibeVarios[7];
             $codigo_fallo = $RecibeVarios[0];
-            $descripcion = $RecibeVarios[8];
             $abierto = 1;
             $fecha_caducidad = $FechaCaducidad;
             $hora = $Hora;
+
+            //Se ejecuta la inserción de los datos en la tabla
+            if($stmt->execute()){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        
+        public function insertarDescripcionDenunciaPersonalizado($ID_Ubicacion, $RecibeVarios){      
+            $stmt = $this->dbh->prepare("INSERT INTO descripcionfallo(ID_Ubicacion, codigoFallo, descripcionFallo) VALUES (:ID_UBICACION, :CODIGO_FALLO, :DESCRIPCION_FALLO)");
+
+            $stmt->bindParam(':ID_UBICACION', $id_ubicacion);
+            $stmt->bindParam(':CODIGO_FALLO', $codigo_fallo);
+            $stmt->bindParam(':DESCRIPCION_FALLO', $descripcionFallo);
+
+            $id_ubicacion = $ID_Ubicacion;
+            $codigo_fallo = $RecibeVarios[0];
+            $descripcionFallo = $RecibeVarios[8];
 
             //Se ejecuta la inserción de los datos en la tabla
             if($stmt->execute()){
