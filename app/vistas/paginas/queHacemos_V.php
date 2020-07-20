@@ -4,7 +4,16 @@
 		<div class="container contenedor_1">
             <div class="contenedor_15">
                 <h1 class="h1_2">¿Porque hacemos y trabajamos en Ciudad Transparente?</h1>
-                <p class="p_1">El tiempo nos ha demostrado con mucho dolor y padecimiento, que los politicos venezolanos acostumbran a negociar las instituciones publicas, administran los recursos economicos de la nación en la oscuridad, permiten la degradación de los recursos naturales, violan las leyes y ocultan los hechos, y disfrazan las malas practicas con la compra de voluntades, el populismo, las regalias, el marketing y la psicologia de la manipulación.</p>
+                <p class="p_1">El tiempo nos ha demostrado con mucho dolor y padecimiento, que los politicos venezolanos tienen estas caracteristicas:</p>
+
+                <ul>
+                    <li>Acostumbran a negociar las instituciones publicas.</li>
+                    <li>Administran los recursos economicos de la nación en la oscuridad</li>
+                    <li>Permiten la degradación de los recursos naturales</li>
+                    <li>Violan las leyes y ocultan los hechos</li>
+                    <li>Disfrazan las malas practicas con la compra de voluntades, el populismo, las regalias</li>
+                    <li>Y son habiles en temas de marketing y la psicologia de la manipulación</li>
+                </ul>
 
                 <p class="p_1">Partiendo de estas caracteristicas generales, estos personajes en realidad son el inicio y el continuo sostenimiento de nuestro subdesarrollo, teniendo en cuenta que el desarrollo es obra de grupos de personas organizadas que colocan voluntad, inteligencia, motivación, tenacidad y creatividad en las actividades que emprenden, deberíamos dejar de escuchar promesas politicas y procurar trabajar juntos en nuestras soluciones.</p>
 
